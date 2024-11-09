@@ -7,10 +7,15 @@
                 <div class="body1 mb-4">
                     <BodyPage />
                 </div>
-                <div class="section-aboutme ">
+                <div class="section-aboutme">
                     <section>
                     <AboutMe />
                 </section>
+                </div>
+                <div class="secton-skillme">
+                    <section>
+                        <SkillMe />
+                    </section>
                 </div>
             </div>
         </div>
@@ -20,6 +25,7 @@
 import HeaderBar from '../components/HeaderBar.vue'; // Adjust path as necessary
 import BackgroundBox from '/src/components/ui/BackgroundBox.vue';
 import BodyPage from '../views/BodyPage.vue'; // Adjust path as necessary
+import SkillMe from '../views/SkillMe.vue'; // Adjust path as necessary
 </script>
 <script>
 import '../main.js';
@@ -31,6 +37,7 @@ export default {
         BackgroundBox,
         BodyPage,
         AboutMe,
+        SkillMe,
     }
 }
 </script>
