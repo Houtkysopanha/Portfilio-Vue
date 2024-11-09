@@ -87,7 +87,7 @@
             <div class="name text-center">
               <p>GIT</p>
             </div>
-          </div>``
+          </div>
           <div class="box-1">
             <div class="logo">
               <img
