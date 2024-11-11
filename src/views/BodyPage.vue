@@ -5,19 +5,19 @@
         <div class="col">
           <div class="con-1 p-3">
             <div class="content">
-              <h3 class="text-4xl font-bold">Hi, I'm PANHA</h3>
-              <h2 class="text-5xl leading-tight font-bold">
+              <h3 class="text-4xl font-bold" data-aos="fade-down">Hi, I'm PANHA</h3>
+              <h2 class="text-5xl leading-tight font-bold" >
                 NICE TO MEET YOU!!
               </h2>
               
-                <div class="typewriter">
+                <div class="typewriter" >
                   <h2 class="text-4xl leading-tight font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
                     I am into FRONTEND-DEVELOPER.
                   </h2>
                 </div>
               
 
-              <p class="leading-7 font-bold">
+              <p class="leading-7 font-bold" >
                 I am good at build for WebApplication and Website
                 <br />
                 I am very passionate about improving my coding skills &
@@ -35,9 +35,12 @@
         </div>
         <div class="col">
           <div class="con2 p-3 ">
-                <img src="https://i.pinimg.com/564x/12/bd/05/12bd059f106729fb3db9f82c3d159e09.jpg" alt="">
+                <img src="../assets/Avata.png" alt="">
           </div>
         </div>
+        <!-- <div class="col-span-12 md:col-span-6 overflow-hidden">
+        <img src="https://4kwallpapers.com/images/wallpapers/silhouette-person-balance-sunset-orange-sky-dawn-standing-3840x2160-3148.jpg" alt="Image" class="md:ml-auto block md:h-full" style="clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0 100%)">
+    </div> -->
       </div>
     </div>
 </div>

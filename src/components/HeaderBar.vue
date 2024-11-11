@@ -5,7 +5,9 @@
         <div class="all-nav">
           <div class="nav-left">
             <div class="logo">
-              <img style="width: 83px;" src="../assets/HP1-removebg-preview.png" alt="Logo">
+             <p>Panha <sup> <img style=" width: 20px;" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" /></sup> 
+             </p> 
+
             </div>
           </div>
           <div class="nav-right">

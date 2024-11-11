@@ -17,11 +17,18 @@
                         <SkillMe />
                     </section>
                 </div>
+                <div class="secton-myedux">
+                    <section>
+                        <MyEducation />
+                    </section>
+                </div>
             </div>
         </div>
         </div>
 </template>
 <script setup>
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import HeaderBar from '../components/HeaderBar.vue'; // Adjust path as necessary
 import BackgroundBox from '/src/components/ui/BackgroundBox.vue';
 import BodyPage from '../views/BodyPage.vue'; // Adjust path as necessary
@@ -30,6 +37,7 @@ import SkillMe from '../views/SkillMe.vue'; // Adjust path as necessary
 <script>
 import '../main.js';
 import AboutMe from './AboutMe.vue';
+import MyEducation from './MyEducation.vue';
 export default {
     name: 'all-container',
     components: {
@@ -38,7 +46,11 @@ export default {
         BodyPage,
         AboutMe,
         SkillMe,
-    }
+        MyEducation,
+    },
+    mounted() {
+    AOS.init();
+  }
 }
 </script>
 <style>
