@@ -1,11 +1,12 @@
 <template>
   <div class="main-body">
+    <ScrollPanel style="width: 250px; height: 200px">
     <div class="container overflow-hidden text-start">
       <div class="row">
         <div class="col">
-          <div class="con-1 p-3">
-            <div class="content">
-              <h3 class="text-4xl font-bold" data-aos="fade-down">Hi, I'm PANHA</h3>
+          <div class="con-1 p3">
+            <div class="content ">
+              <h3 class="text-4xl font-bold" data-aos="fade-down"> &lt; / Hi, I'm PANHA &gt; </h3>
               <h2 class="text-5xl leading-tight font-bold" >
                 NICE TO MEET YOU!!
               </h2>
@@ -30,6 +31,11 @@
                 <BtnSocial />
             </div>
             </div>
+            <div class="scrolldown text-center">
+              <p>Please Scroll Down to see more</p>
+              <i class="fa-solid fa-circle-chevron-down animated-arrow" style="color: #63E6BE;"></i>            
+            </div>
+            <ScrollTop  />
             
           </div>
         </div>
@@ -43,21 +49,48 @@
     </div> -->
       </div>
     </div>
+  </ScrollPanel>
 </div>
 </template>
 <script>
 import BtnContact from './BtnContact.vue';
 import BtnSocial from './BtnSocial.vue';
+import ScrollTop from 'primevue/scrolltop';
 
 export default {
-  components: { BtnContact, BtnSocial },
+  components: { BtnContact, BtnSocial, ScrollTop,},
   name: "BodyPage",
   
 };
 </script>
 
 <style scoped>
+.scrolldown {
+  color: #ffffff;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 20px;
+}
 
+.animated-arrow {
+  color: #ffffff;
+  font-size: 2rem;
+  animation: bounce 1.5s infinite;
+  display: inline-block;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px); /* Adjust as needed for bounce distance */
+  }
+}
+.main-body {
+  width: 100%;
+  height: 830px;
+}
 @keyframes ring {
   0% {
     width: 30px;
@@ -91,6 +124,9 @@ export default {
   font-size: clamp(2rem, 2.8vw, 5rem);
   font-family: Raleway;
   font-weight: bold;
+}
+.con2{
+  width: 700px;
 }
 
 .typewriter {

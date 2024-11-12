@@ -1,7 +1,7 @@
 <template>
   <div class="main-aboutme bg-black">
     <div class="container">
-      <div class="AboutMe mb-40 mt-0 text-center">
+      <div class="AboutMe mb-40 text-center">
         <h1>About Me</h1>
       </div>
       <div class="contain">
@@ -91,7 +91,7 @@ export default {
 <style scoped>
 .main-aboutme {
     width: 100%;
-    height: 850px;
+    height: 900px;
 }
 .card {
   position: relative;

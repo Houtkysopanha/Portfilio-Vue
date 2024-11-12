@@ -69,7 +69,7 @@ export default {
 <style scoped>
 .mian-myeduc {
   width: 100%;
-  height: 900px;
+  height: 850px;
   background: black;
 }
 .box1, .box2{

@@ -4,7 +4,7 @@
         <div class="wrapper">
             <HeaderBar />
             <div class="main-content">
-                <div class="body1 mb-4">
+                <div class="body1 mb-0">
                     <BodyPage />
                 </div>
                 <div class="section-aboutme">
@@ -57,7 +57,8 @@ export default {
 @import "../main.css";
 .all-container{
     width: 100%;
-    height: 100vh;
+    height: auto;
+    background: black;
 }
 .grid-background {
     background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
