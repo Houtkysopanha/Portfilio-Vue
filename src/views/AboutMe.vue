@@ -67,28 +67,35 @@
               </div>
             </div>
           </div>
-        </div>
+          <FormContact />
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <script>
 import Fieldset from 'primevue/fieldset';
 import Chip from 'primevue/chip';
 import Button from 'primevue/button';
+import FormContact from './FormContact.vue';
+
 
 export default {
   name: "AboutMe",
   components: {
     Fieldset,
     Chip,
-    Button
-  }
+    Button,
+    FormContact,
+
+  },
+ 
 };
 </script>
 
 <style scoped>
+
 .main-aboutme {
     width: 100%;
     height: 900px;

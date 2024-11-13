@@ -8,10 +8,10 @@
         </div>
       </div>
       <div class="content">
-        <div class="row mb-2">
+        <div class="row mb-2 ">
           <div class="col-6 p-2 col-md-4 box1">
             <div class="image">
-                <img  style="height: 200px; width: 100%;" src="../assets/High School .png" alt="">
+                <img  style="height: 200px; width: 100%; border-radius: 5px;" src="../assets/High School .png" alt="">
             </div>
         </div>
           <div div class="col-md-8 p-3 box2">
@@ -67,6 +67,7 @@ export default {
 };
 </script>
 <style scoped>
+
 .mian-myeduc {
   width: 100%;
   height: 850px;
@@ -74,9 +75,11 @@ export default {
 }
 .box1, .box2{
     background:#3f3f46 ;
+    border-radius: 5px;
 }
 .box1{
     border-right: 4px solid black;
+
 }
 .describe {
     line-height: 0.7;
