@@ -27,9 +27,17 @@
           <div :class="{'collapse': !isNavbarOpen && windowWidth < 768, 'navbar-collapse': true}" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
               <div class="hori-selector" :style="horiSelectorStyle"><div class="left"></div><div class="right"></div></div>
-              <li class="nav-item" v-for="(item, index) in menuItems" :key="index" :class="{ active: activeIndex === index }" @click="setActive(index, $event)">
-                <a class="nav-link" href="#"><i :class="item.icon"></i> {{ item.name }}</a>
-              </li>
+              <li
+  class="nav-item"
+  v-for="(item, index) in menuItems"
+  :key="index"
+  :class="{ active: activeIndex === index }"
+  @click="setActive(index, $event)"
+>
+  <a class="nav-link" :href="item.href">
+    <i :class="item.icon"></i> {{ item.name }}
+  </a>
+</li>
             </ul>
           </div>
         </div>
@@ -43,50 +51,47 @@
 export default {
   name: 'HeaderBar',
   data() {
-    return {
-      menuItems: [
-        { name: 'HOME', icon: 'fas fa-house' },
-        { name: 'ABOUTME', icon: 'fas fa-address-card' },
-        { name: 'SKILLS', icon: 'fas fa-laptop-code' },
-        { name: 'EDUCATION', icon: 'fas fa-graduation-cap' },
-        { name: 'WORK', icon: 'fas fa-check-to-slot' },
-        { name: 'EXPERIMENCE', icon: 'fas fa-briefcase' },
-      ],
-      activeIndex: 0, // Set to 0 to make "HOME" active by default
-      isNavbarOpen: false,
-      windowWidth: window.innerWidth,
-      horiSelectorStyle: {
-        top: '0px',
-        left: '0px',
-        height: '0px',
-        width: '0px'
-      }
-    };
-  },
+  return {
+    menuItems: [
+      { name: 'HOME', icon: 'fas fa-house', href: '#home' },
+      { name: 'ABOUTME', icon: 'fas fa-address-card', href: '#aboutme' },
+      { name: 'SKILLS', icon: 'fas fa-laptop-code', href: '#skills' },
+      { name: 'EDUCATION', icon: 'fas fa-graduation-cap', href: '#education' },
+      { name: 'WORK', icon: 'fas fa-check-to-slot', href: '#work' },
+      { name: 'EXPERIENCE', icon: 'fas fa-briefcase', href: '#experience' },
+    ],
+    activeIndex: 0,
+    isNavbarOpen: false,
+    horiSelectorStyle: {
+      top: '0px',
+      left: '0px',
+      height: '0px',
+      width: '0px'
+    }
+  };
+},
+
   methods: {
     toggleNavbar() {
       this.isNavbarOpen = !this.isNavbarOpen;
       this.updateHoriSelector();
     },
     setActive(index, event) {
-      this.activeIndex = index;
-      this.updateHoriSelector(event.target.closest('li'));
-    },
-    updateHoriSelector(activeItem) {
-      if (!activeItem) {
-        // activeItem = this.$el.querySelector('.nav-item.active');
-      }
-      if (activeItem) {
-        const { offsetTop, offsetLeft, offsetHeight, offsetWidth } = activeItem;
-        this.horiSelectorStyle = {
-          top: `${offsetTop}px`,
-          left: `${offsetLeft}px`, // Align left from the start of the "HOME" menu item
-          height: `${offsetHeight}px`,
-          width: `${offsetWidth}px`,
-          borderRadius: '15px'
-        };
-      }
-    },
+    this.activeIndex = index;
+    this.updateHoriSelector(event.target.closest('li'));
+  },
+  updateHoriSelector(activeItem) {
+    if (activeItem) {
+      const { offsetTop, offsetLeft, offsetHeight, offsetWidth } = activeItem;
+      this.horiSelectorStyle = {
+        top: `${offsetTop}px`,
+        left: `${offsetLeft}px`,
+        height: `${offsetHeight}px`,
+        width: `${offsetWidth}px`,
+        borderRadius: '15px',
+      };
+    }
+  },
     updateWindowWidth() {
       this.windowWidth = window.innerWidth;
       if (this.windowWidth >= 768) {
@@ -100,9 +105,11 @@ export default {
     this.updateHoriSelector();
     this.updateWindowWidth();
     window.addEventListener('resize', this.updateWindowWidth);
+    window.addEventListener('scroll', this.detectActiveSection);
   },
   beforeUnmount() {
     window.removeEventListener('resize', this.updateWindowWidth);
+    window.removeEventListener('scroll', this.detectActiveSection);
   }
 };
 </script>

@@ -10,24 +10,22 @@
         <div v-if="formVisible" class="contact-form-modal">
           <form @submit.prevent="submitForm">
             <div class="form-group">
+              <label style="font-size: 12px;">
+               Please send me your monthly newsletter
+              </label>
+            </div>
+            <div class="form-group">
               <!-- <label for="name">Name:</label> -->
-              <FloatLabel variant="on">
-    <InputText id="value3" v-model="value3" :invalid="!value3" />
-    <label class="bg-none" for="value3">Username</label>
-</FloatLabel>
+              <label for="username">Username:</label>
+              <input class="rounded-md	" type="text" id="text" v-model="formData.username" required />
             </div>
             <div class="form-group">
               <label for="email">Email:</label>
-              <input type="email" id="email" v-model="formData.email" required />
+              <input class="rounded-md	" type="email" id="email" v-model="formData.email" required />
             </div>
             <div class="form-group">
               <label for="message">Message:</label>
-              <textarea id="message" v-model="formData.message" required></textarea>
-            </div>
-            <div class="form-group">
-              <label>
-                <input type="checkbox" v-model="formData.optin" /> Please send me your monthly newsletter
-              </label>
+              <textarea class="rounded-md	" id="message" v-model="formData.message" required></textarea>
             </div>
             <div class="form-actions">
               <button type="submit">Send</button>
@@ -40,15 +38,15 @@
   </template>
   
   <script>
-  import InputText from 'primevue/inputtext';
-  import FloatLabel from 'primevue/floatlabel';
+  // import InputText from 'primevue/inputtext';
+  // import FloatLabel from 'primevue/floatlabel';
 
 
   export default {
     name: "ContactForm",
     components: {
-        InputText,
-        FloatLabel
+        // InputText,
+        // FloatLabel
       },
     data() {
       return {
@@ -103,7 +101,6 @@
     justify-content: center;
     align-items: center;
   }
-  
   .contact-button:hover {
     transform: translateY(-50%) scale(1.05);
   }
@@ -116,7 +113,7 @@
     position: fixed;
     bottom: 80px;
     left: 2%;
-    background: red;
+    background: #3f3f46;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);

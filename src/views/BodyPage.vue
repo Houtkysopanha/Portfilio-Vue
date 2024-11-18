@@ -134,6 +134,7 @@ export default {
   overflow: hidden;
   border-right: 4px solid #212121;
   animation: typing 3s steps(30, end) infinite alternate, cursor 0.75s step-end infinite;
+  color: linear-gradient(to right, rgb(99, 102, 241), rgb(168, 85, 247), rgb(236, 72, 153)) ; 
 }
 
 @keyframes typing {
