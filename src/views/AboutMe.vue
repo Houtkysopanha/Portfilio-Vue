@@ -2,7 +2,7 @@
   <div class="main-aboutme bg-black">
     <div class="container">
       <div class="AboutMe mb-40 text-center">
-        <h1>About Me</h1>
+        <h1> &lt; / About Me &gt; </h1>
       </div>
       <div class="contain">
         <div class="row g-0 text-start">
@@ -37,7 +37,7 @@
 
           </div>
           <div class="col-sm-6 col-md-8 p-2">
-            <div class="content-text ml-20 mt-20">
+            <div class="content-text ml-20 mt-10">
               <h4 class="mb-3">HOUTKY SOPANHA</h4>
               <div class="skill">
                 <p>Frontend Developer</p>
@@ -46,11 +46,23 @@
                 <Fieldset>
                   <template #legend>
                     <div class="chip" style="width: 27%; font-size: 18px;">
-                      <Chip label="HOUTKYSOPANHA" image= "https://scontent.fpnh1-1.fna.fbcdn.net/v/t39.30808-6/407326085_1045442653364089_2566174350899690277_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=f727a1&_nc_ohc=6YIRxuhAPDgQ7kNvgEpg10l&_nc_zt=23&_nc_ht=scontent.fpnh1-1.fna&_nc_gid=A8D4fJ8UwYByhWq43yz0lkH&oh=00_AYBj-PLLdOdUzOwfPK7XwOdiiQJf0ElJ_rZscCgfuMtRbA&oe=6737CCEA" />
+                      <Chip label="HOUTKYSOPANHA" image= "https://scontent.fpnh5-6.fna.fbcdn.net/v/t39.30808-6/407326085_1045442653364089_2566174350899690277_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeEwnMeVLWO0qFFRbaXLkKsm4ULn7ajDBVLhQuftqMMFUjpPeOoiipp9VuCdfQiQ0V2o1RSd0zqzE7_mDS6sBOUA&_nc_ohc=AS4--BCDX70Q7kNvgHr3FUE&_nc_zt=23&_nc_ht=scontent.fpnh5-6.fna&_nc_gid=A2U4mJtOArtEty4mjw-pvXk&oh=00_AYDdlJrzaOsiIOmrvG4C2yetrqRZh2PhwY6bum9nyw7jlQ&oe=673F456A" />
                     </div>
                   </template>
                   <p class="m-0">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  I am a Junior developer and ICT at Royal University Of Phnom Penh.
+                  </p>
+                  <p class="m-0">
+                  As a Developer I take several different project.
+                  </p>
+                  <p class="m-0">
+                    I am very passionate about improving my coding skills & developing
+applications & websites.
+                  </p>
+                  <br>
+                  <p>
+                    <span class=" font-medium text-cyan-500">Email:</span>
+                    houtkysopanha69@gmail.com
                   </p>
                 </Fieldset>
               </div>
@@ -67,28 +79,35 @@
               </div>
             </div>
           </div>
-        </div>
+          <FormContact />
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <script>
 import Fieldset from 'primevue/fieldset';
 import Chip from 'primevue/chip';
 import Button from 'primevue/button';
+import FormContact from './FormContact.vue';
+
 
 export default {
   name: "AboutMe",
   components: {
     Fieldset,
     Chip,
-    Button
-  }
+    Button,
+    FormContact,
+
+  },
+ 
 };
 </script>
 
 <style scoped>
+
 .main-aboutme {
     width: 100%;
     height: 900px;
@@ -170,7 +189,7 @@ export default {
   right: 0;
   bottom: 0;
   left: 0;
-  background: url(https://scontent.fpnh1-1.fna.fbcdn.net/v/t39.30808-6/407326085_1045442653364089_2566174350899690277_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=f727a1&_nc_ohc=6YIRxuhAPDgQ7kNvgEpg10l&_nc_zt=23&_nc_ht=scontent.fpnh1-1.fna&_nc_gid=A8D4fJ8UwYByhWq43yz0lkH&oh=00_AYBj-PLLdOdUzOwfPK7XwOdiiQJf0ElJ_rZscCgfuMtRbA&oe=6737CCEA) 50% 50% / cover no-repeat;
+  background: url(https://scontent.fpnh5-6.fna.fbcdn.net/v/t39.30808-6/407326085_1045442653364089_2566174350899690277_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeEwnMeVLWO0qFFRbaXLkKsm4ULn7ajDBVLhQuftqMMFUjpPeOoiipp9VuCdfQiQ0V2o1RSd0zqzE7_mDS6sBOUA&_nc_ohc=AS4--BCDX70Q7kNvgHr3FUE&_nc_zt=23&_nc_ht=scontent.fpnh5-6.fna&_nc_gid=A2U4mJtOArtEty4mjw-pvXk&oh=00_AYDdlJrzaOsiIOmrvG4C2yetrqRZh2PhwY6bum9nyw7jlQ&oe=673F456A) 50% 50% / cover no-repeat;
   box-shadow: 0 0 50px rgba(0, 0, 0, .3);
   transition: .5s ease;
 }

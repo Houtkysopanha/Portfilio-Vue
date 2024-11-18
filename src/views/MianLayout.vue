@@ -5,20 +5,23 @@
             <HeaderBar />
             <div class="main-content">
                 <div class="body1 mb-0">
-                    <BodyPage />
+                    <section id="home">
+                        <BodyPage />
+                    </section>
+                    
                 </div>
                 <div class="section-aboutme">
-                    <section>
+                    <section id="aboutme">
                     <AboutMe />
                 </section>
                 </div>
                 <div class="secton-skillme">
-                    <section>
+                    <section id="skills">
                         <SkillMe />
                     </section>
                 </div>
                 <div class="secton-myedux">
-                    <section>
+                    <section id="education">
                         <MyEducation />
                     </section>
                 </div>
