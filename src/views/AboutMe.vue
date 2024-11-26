@@ -38,7 +38,7 @@
           </div>
           <div class="col-sm-6 col-md-8 p-2">
             <div class="content-text ml-20 mt-10">
-              <h4 class="mb-3">HOUTKY SOPANHA</h4>
+              <h4 class="mb-3 text-4xl">HOUTKY SOPANHA</h4>
               <div class="skill">
                 <p>Frontend Developer</p>
               </div>

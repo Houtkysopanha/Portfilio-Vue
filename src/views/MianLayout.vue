@@ -25,6 +25,24 @@
                         <MyEducation />
                     </section>
                 </div>
+                <div class="secton-mypro">
+                    <section >
+                        <ProjectMade />
+                    </section>
+                </div>
+                <div class="secton-myexper">
+                    <section >
+                        <ExperPage />
+                    </section>
+                </div>
+                <div class="section-contact">
+                    <section>
+                        <ContactPage />
+                    </section>
+                </div>
+                <div class="section-footer">
+                    <FooterPage />
+                </div>  
             </div>
         </div>
         </div>
@@ -41,6 +59,10 @@ import SkillMe from '../views/SkillMe.vue'; // Adjust path as necessary
 import '../main.js';
 import AboutMe from './AboutMe.vue';
 import MyEducation from './MyEducation.vue';
+import ProjectMade from './ProjectMade.vue';
+import ExperPage from './ExperPage.vue';
+import ContactPage from './ContactPage.vue';
+import FooterPage from './FooterPage.vue';
 export default {
     name: 'all-container',
     components: {
@@ -50,6 +72,10 @@ export default {
         AboutMe,
         SkillMe,
         MyEducation,
+        ProjectMade,
+        ExperPage,
+        ContactPage,
+        FooterPage,
     },
     mounted() {
     AOS.init();

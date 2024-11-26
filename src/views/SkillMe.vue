@@ -2,7 +2,7 @@
   <div class="main-skillme">
     <div class="container">
       <div class="Subject text-center mb-20">
-        <h1> &lt; / Skill & Ablity &gt; </h1>
+        <h1 class="text-4xl">&lt; / Skill & Ablity &gt;</h1>
       </div>
       <div class="content-skill">
         <div
@@ -16,6 +16,20 @@
             </div>
             <div class="name text-center">
               <p>HTML5</p>
+              <div
+            
+              
+                class="progress"
+                role="progressbar"
+                aria-label="Example 1px high"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                style="height: 4px; background-color: black
+                      "
+              >
+                <div class="progress-bar" style="width: 85%; background-color: whitesmoke;"></div>
+              </div>
             </div>
           </div>
           <div class="box-1">
@@ -26,6 +40,20 @@
             </div>
             <div class="name text-center">
               <p>CSS3</p>
+              <div
+            
+              
+                class="progress"
+                role="progressbar"
+                aria-label="Example 1px high"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                style="height: 4px; background-color: black
+                      "
+              >
+                <div class="progress-bar" style="width: 85%; background-color: whitesmoke;"></div>
+              </div>
             </div>
           </div>
           <div class="box-1">
@@ -36,6 +64,20 @@
             </div>
             <div class="name text-center">
               <p>JAVASCRIPT</p>
+              <div
+            
+              
+                class="progress"
+                role="progressbar"
+                aria-label="Example 1px high"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                style="height: 4px; background-color: black
+                      "
+              >
+                <div class="progress-bar" style="width: 50%; background-color: whitesmoke;"></div>
+              </div>
             </div>
           </div>
           <div class="box-1">
@@ -46,6 +88,20 @@
             </div>
             <div class="name text-center">
               <p>BOOTSTRAP</p>
+              <div
+            
+              
+                class="progress"
+                role="progressbar"
+                aria-label="Example 1px high"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                style="height: 4px; background-color: black
+                      "
+              >
+                <div class="progress-bar" style="width: 65%; background-color: whitesmoke;"></div>
+              </div>
             </div>
           </div>
           <div class="box-1">
@@ -56,6 +112,20 @@
             </div>
             <div class="name text-center">
               <p>TAILWANDCSS</p>
+              <div
+            
+              
+                class="progress"
+                role="progressbar"
+                aria-label="Example 1px high"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                style="height: 4px; background-color: black
+                      "
+              >
+                <div class="progress-bar" style="width: 50%; background-color: whitesmoke;"></div>
+              </div>
             </div>
           </div>
           <div class="box-1">
@@ -66,6 +136,20 @@
             </div>
             <div class="name text-center">
               <p>VUEJS</p>
+              <div
+            
+              
+                class="progress"
+                role="progressbar"
+                aria-label="Example 1px high"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                style="height: 4px; background-color: black
+                      "
+              >
+                <div class="progress-bar" style="width: 50%; background-color: whitesmoke;"></div>
+              </div>
             </div>
           </div>
           <div class="box-1">
@@ -76,6 +160,20 @@
             </div>
             <div class="name text-center">
               <p>PRIMEVUE</p>
+              <div
+            
+              
+                class="progress"
+                role="progressbar"
+                aria-label="Example 1px high"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                style="height: 4px; background-color: black
+                      "
+              >
+                <div class="progress-bar" style="width: 45%; background-color: whitesmoke;"></div>
+              </div>
             </div>
           </div>
           <div class="box-1">
@@ -86,6 +184,20 @@
             </div>
             <div class="name text-center">
               <p>GIT</p>
+              <div
+            
+              
+                class="progress"
+                role="progressbar"
+                aria-label="Example 1px high"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                style="height: 4px; background-color: black
+                      "
+              >
+                <div class="progress-bar" style="width: 50%; background-color: whitesmoke;"></div>
+              </div>
             </div>
           </div>
           <div class="box-1">
@@ -96,6 +208,20 @@
             </div>
             <div class="name text-center">
               <p>GITHUB</p>
+              <div
+            
+              
+                class="progress"
+                role="progressbar"
+                aria-label="Example 1px high"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                style="height: 4px; background-color: black
+                      "
+              >
+                <div class="progress-bar" style="width: 50%; background-color: whitesmoke;"></div>
+              </div>
             </div>
           </div>
           <div class="box-1">
@@ -106,6 +232,20 @@
             </div>
             <div class="name text-center">
               <p>NPM</p>
+              <div
+            
+              
+                class="progress"
+                role="progressbar"
+                aria-label="Example 1px high"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                style="height: 4px; background-color: black
+                      "
+              >
+                <div class="progress-bar" style="width: 50%; background-color: whitesmoke;"></div>
+              </div>
             </div>
           </div>
           <div class="box-1">
@@ -116,6 +256,20 @@
             </div>
             <div class="name text-center">
               <p>POSTMAN</p>
+              <div
+            
+              
+                class="progress"
+                role="progressbar"
+                aria-label="Example 1px high"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                style="height: 4px; background-color: black
+                      "
+              >
+                <div class="progress-bar" style="width: 50%; background-color: whitesmoke;"></div>
+              </div>
             </div>
           </div>
           <div class="box-1">
@@ -126,6 +280,19 @@
             </div>
             <div class="name text-center">
               <p>VERCEL</p>
+              <div
+
+                class="progress"
+                role="progressbar"
+                aria-label="Example 1px high"
+                aria-valuenow="25"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                style="height: 4px; background-color: black
+                      "
+              >
+                <div class="progress-bar" style="width: 50%; background-color: whitesmoke;"></div>
+              </div>
             </div>
           </div>
         </div>
