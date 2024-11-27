@@ -92,7 +92,7 @@ export default {
     padding: 0;
     margin: 0;
     width: 100%;
-    height: 300px;
+    height: auto;
 }
 .social-menu {
   margin-top: 20px; /* Adds some spacing from the top */

@@ -54,10 +54,11 @@ import HeaderBar from '../components/HeaderBar.vue'; // Adjust path as necessary
 import BackgroundBox from '/src/components/ui/BackgroundBox.vue';
 import BodyPage from '../views/BodyPage.vue'; // Adjust path as necessary
 import SkillMe from '../views/SkillMe.vue'; // Adjust path as necessary
+import AboutMe from '../views/AboutMe.vue'; // Adjust path as necessary
 </script>
 <script>
 import '../main.js';
-import AboutMe from './AboutMe.vue';
+// import AboutMe from './AboutMe.vue';
 import MyEducation from './MyEducation.vue';
 import ProjectMade from './ProjectMade.vue';
 import ExperPage from './ExperPage.vue';
