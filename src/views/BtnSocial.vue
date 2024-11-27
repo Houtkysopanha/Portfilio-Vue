@@ -53,7 +53,7 @@
   
   .container {
     display: table;
-    height: 95vh;
+    height: auto;
     width: 90%;
     padding-bottom: 5vh;
     margin: auto;
@@ -61,9 +61,9 @@
   }
   
   .content {
-    display: table-cell;
+    // display: table-cell;
     text-align: center;
-    vertical-align: middle;
+    // vertical-align: middle;
   }
   
   // Icon Container Styles

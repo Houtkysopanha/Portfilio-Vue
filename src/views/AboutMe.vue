@@ -20,25 +20,10 @@
     <div class="box-contents"></div>
   </div>
 </div>
-
-
-            <!-- <div
-  class="card skew-y-0  "
->
-  <img
-    src="../assets/My Photo.jpg"
-    alt="Avatar"
-    style="width: 100%; height: 100%; border-radius: 5px;"
-  />
-  <div class="container">
-    <p>&lt; " Here!! Me " / &gt;</p>
-  </div>
-</div> -->
-
           </div>
           <div class="col-sm-6 col-md-8 p-2">
             <div class="content-text ml-20 mt-10">
-              <h4 class="mb-3">HOUTKY SOPANHA</h4>
+              <h4 class="mb-3 text-4xl">HOUTKY SOPANHA</h4>
               <div class="skill">
                 <p>Frontend Developer</p>
               </div>
@@ -110,7 +95,7 @@ export default {
 
 .main-aboutme {
     width: 100%;
-    height: 900px;
+    height: auto;
 }
 .card {
   position: relative;

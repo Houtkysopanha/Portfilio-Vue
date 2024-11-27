@@ -1,82 +1,142 @@
 <template>
   <div class="main-body">
-    <ScrollPanel style="width: 250px; height: 200px">
-    <div class="container overflow-hidden text-start">
-      <div class="row">
-        <div class="col">
-          <div class="con-1 p3">
-            <div class="content ">
-              <h3 class="text-4xl font-bold" data-aos="fade-down"> &lt; / Hi, I'm PANHA &gt; </h3>
-              <h2 class="text-5xl leading-tight font-bold" >
-                NICE TO MEET YOU!!
-              </h2>
-              
-                <div class="typewriter" >
-                  <h2 class="text-4xl leading-tight font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
-                    I am into FRONTEND-DEVELOPER.
+    <ScrollPanel style="width: 100%; height: auto">
+      <div class="container">
+        <div class="row row-cols-1 g-0">
+          <div class="col-md-6">
+            <div class="con-1">
+              <div class="content">
+                <h3 class="text-4xl font-bold" data-aos="fade-down">&lt;/ Hi, I'm PANHA &gt;</h3>
+                <h2 class="text-5xl leading-tight font-bold">NICE TO MEET YOU!!</h2>
+                <div class="typewriter">
+                  <h2 id="typewriter-text" class="typewriter-text font-bold gradient-text">
+                    {{ displayedText }}
                   </h2>
                 </div>
-              
-
-              <p class="leading-7 font-bold" >
-                I am good at build for WebApplication and Website
-                <br />
-                I am very passionate about improving my coding skills &
-                developing applications & websites.
-              </p>
-              <div class="btn-contact">
-                <BtnContact />
+                <p class="description">
+                  I am good at building Web Applications and Websites. <br />
+                  I am very passionate about improving my coding skills & developing applications.
+                </p>
+                <div class="btn-contact"><BtnContact /></div>
+                <div class="btn-social"><BtnSocial /></div>
+              </div>
+              <div class="scrolldown">
+                <p>Please Scroll Down to see more</p>
+                <i class="fa-solid fa-circle-chevron-down animated-arrow"></i>
+              </div>
+              <ScrollTop />
             </div>
-            <div class="btn-social">
-                <BtnSocial />
+          </div>
+          <div class="col-md-6">
+            <div class="con2">
+              <img src="../assets/Avata.png" alt="Avatar" class="avatar-img" />
             </div>
-            </div>
-            <div class="scrolldown text-center">
-              <p>Please Scroll Down to see more</p>
-              <i class="fa-solid fa-circle-chevron-down animated-arrow" style="color: #63E6BE;"></i>            
-            </div>
-            <ScrollTop  />
-            
           </div>
         </div>
-        <div class="col">
-          <div class="con2 p-3 ">
-                <img src="../assets/Avata.png" alt="">
-          </div>
-        </div>
-        <!-- <div class="col-span-12 md:col-span-6 overflow-hidden">
-        <img src="https://4kwallpapers.com/images/wallpapers/silhouette-person-balance-sunset-orange-sky-dawn-standing-3840x2160-3148.jpg" alt="Image" class="md:ml-auto block md:h-full" style="clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0 100%)">
-    </div> -->
       </div>
-    </div>
-  </ScrollPanel>
-</div>
+    </ScrollPanel>
+  </div>
 </template>
+
 <script>
-import BtnContact from './BtnContact.vue';
-import BtnSocial from './BtnSocial.vue';
-import ScrollTop from 'primevue/scrolltop';
+import BtnContact from "./BtnContact.vue";
+import BtnSocial from "./BtnSocial.vue";
+import ScrollTop from "primevue/scrolltop";
 
 export default {
-  components: { BtnContact, BtnSocial, ScrollTop,},
+  components: {
+    BtnContact,
+    BtnSocial,
+    ScrollTop,
+  },
   name: "BodyPage",
-  
+  data() {
+    return {
+      words: [
+        "I am into a FRONTEND-DEVELOPER.",
+        "Now, I am years 2 of University.",
+        "Vue JS Framework.",
+        "DESIGN ENTHUSIAST.",
+       
+      ],
+      currentWordIndex: 1,
+      displayedText: "",
+      isDeleting: false,
+      typingSpeed: 100, // Typing speed in milliseconds
+      deletingSpeed: 50, // Deleting speed in milliseconds
+      pauseBetweenWords: 1000, // Pause before typing the next word
+    };
+  },
+  mounted() {
+    this.startTyping();
+  },
+  beforeUnmount() {
+    clearTimeout(this.typingTimeout);
+  },
+  methods: {
+    startTyping() {
+      const currentWord = this.words[this.currentWordIndex];
+
+      if (!this.isDeleting && this.displayedText.length < currentWord.length) {
+        // Typing mode
+        this.displayedText = currentWord.substring(0, this.displayedText.length + 1);
+        this.typingTimeout = setTimeout(this.startTyping, this.typingSpeed);
+      } else if (this.isDeleting && this.displayedText.length > 0) {
+        // Deleting mode
+        this.displayedText = currentWord.substring(0, this.displayedText.length - 1);
+        this.typingTimeout = setTimeout(this.startTyping, this.deletingSpeed);
+      } else if (!this.isDeleting && this.displayedText.length === currentWord.length) {
+        // Pause after typing the full word
+        this.isDeleting = true;
+        this.typingTimeout = setTimeout(this.startTyping, this.pauseBetweenWords);
+      } else if (this.isDeleting && this.displayedText.length === 0) {
+        // Switch to the next word
+        this.isDeleting = false;
+        this.currentWordIndex = (this.currentWordIndex + 1) % this.words.length;
+        this.typingTimeout = setTimeout(this.startTyping, this.typingSpeed);
+      }
+    },
+  },
 };
 </script>
 
 <style scoped>
+.main-body {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+.con-1 {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 2rem;
+}
+
+.content {
+  margin-top: 4rem;
+    
+}
+
+.description {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
 .scrolldown {
-  color: #ffffff;
-  font-size: 1.2rem;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 2rem;
 }
 
 .animated-arrow {
-  color: #ffffff;
+  color: #63e6be;
   font-size: 2rem;
   animation: bounce 1.5s infinite;
-  display: inline-block;
 }
 
 @keyframes bounce {
@@ -84,72 +144,81 @@ export default {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(10px); /* Adjust as needed for bounce distance */
+    transform: translateY(10px);
   }
-}
-.main-body {
-  width: 100%;
-  height: 830px;
-}
-@keyframes ring {
-  0% {
-    width: 30px;
-    height: 30px;
-    opacity: 1;
-  }
-  /* 100% {
-    width: 300px;
-    height: 300px;
-    opacity: 0;
-  } */
-}
-.container {
-  display: ruby;
-  box-sizing: border-box;
-}
-.con-1 {
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-}
-.con-1 .content {
-  padding: 0 10%;
-  margin-top: 10rem;
-}
-.container1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  font-size: clamp(2rem, 2.8vw, 5rem);
-  font-family: Raleway;
-  font-weight: bold;
-}
-.con2{
-  width: 700px;
 }
 
 .typewriter {
   white-space: nowrap;
   overflow: hidden;
-  border-right: 4px solid #212121;
-  animation: typing 3s steps(30, end) infinite alternate, cursor 0.75s step-end infinite;
-  color: linear-gradient(to right, rgb(99, 102, 241), rgb(168, 85, 247), rgb(236, 72, 153)) ; 
+  /* border-right: 4px solid #212121; */
 }
 
-@keyframes typing {
-  from { 
-    width: 0; 
-  }
-  to { 
-    width: 100%; 
-  }
+.typewriter-text {
+  font-size: 2rem;
+  animation: cursor 0.75s step-end infinite;
+
+}
+.gradient-text {
+  background:  linear-gradient(to right, rgb(99, 102, 241), rgb(168, 85, 247), rgb(236, 72, 153));
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 @keyframes cursor {
-  50% { 
-    border-color: transparent; 
+  50% {
+    border-color: red;
   }
 }
 
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .typewriter-text {
+    font-size: 1.75rem; /* Adjust for tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .typewriter-text {
+    font-size: 1.5rem; /* Adjust for small tablets or large phones */
+  }
+}
+
+@media (max-width: 480px) {
+  .typewriter-text {
+    font-size: 1.25rem; /* Adjust for smaller phones */
+    border-right: 2px solid #212121; /* Adjust border size for smaller screens */
+  }
+}
+
+.avatar-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 992px) {
+  .content {
+    margin-top: 2rem;
+  }
+  .typewriter h2 {
+    font-size: 1.8rem;
+  }
+  .description {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .content {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  .typewriter h2 {
+    font-size: 1.5rem;
+  }
+  .animated-arrow {
+    font-size: 1.5rem;
+  }
+}
 </style>
