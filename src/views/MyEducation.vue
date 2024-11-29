@@ -5,7 +5,7 @@
           <h1 class=" text-4xl">
               Education
           </h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates ea ipsam aliquid voluptate beatae aperiam, velit minima facere ab debitis tempora nobis optio, corrupti recusandae enim error, reiciendis excepturi veritatis!</p>
+          <p class="mt-2">Hello, This is my brief education.</p>
       </div>
       <div class="timelinw-exper">
           <section>
@@ -135,7 +135,7 @@ top: 0;
 left: 0;
 width: 3px;
 height: 100%;
-background: darkcyan;
+background: rgb(99, 102, 241);
 }
 
 .timeline ol li .item-inner {
@@ -154,7 +154,7 @@ line-height: 0.9;
 .timeline ol li .time-wrapper::after {
 content: "";
 position: absolute;
-background: red;
+background:  rgb(236, 72, 153);
 }
 
 .timeline ol li .time-wrapper::before {

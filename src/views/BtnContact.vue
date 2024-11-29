@@ -71,7 +71,7 @@ button {
 .bg-circle {
   width: 150%;
   height: 150%; /* Replacing aspect-ratio for broader compatibility */
-  background: rgb(236, 72, 153);
+  background: darkcyan;
   border-radius: 50%;
   position: absolute;
   transform: translate(60%, 60%);

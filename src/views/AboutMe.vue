@@ -1,14 +1,14 @@
 <template>
   <div class="main-aboutme bg-black">
     <div class="container">
-      <div class="AboutMe mb-40 text-center">
+      <div class="AboutMe mb-20   text-center">
         <h1> &lt; / About Me &gt; </h1>
       </div>
       <div class="contain">
-        <div class="row g-0 text-start">
+        <div class="row row-cols-1 g-0 text-start">
           <div class="col-6 col-md-4">
             <div class="demo">
-  <div class="box">
+  <div class="box mb-2">
     <div class="hover-point"></div>
     <div class="hover-point"></div>
     <div class="hover-point"></div>
@@ -20,36 +20,54 @@
     <div class="box-contents"></div>
   </div>
 </div>
+    <p class="text-center">&#64;houtkysopanha</p>
           </div>
-          <div class="col-sm-6 col-md-8 p-2">
-            <div class="content-text ml-20 mt-10">
-              <h4 class="mb-3 text-4xl">HOUTKY SOPANHA</h4>
+          <div class="col-sm-6 col-md-8  p-3">
+            <div class="content-text ">
+              <h4 class="mb-3 text-4xl">My BRIEF BACKGROUND</h4>
               <div class="skill">
                 <p>Frontend Developer</p>
               </div>
               <div class="note">
-                <Fieldset>
-                  <template #legend>
-                    <div class="chip" style="width: 27%; font-size: 18px;">
-                      <Chip label="HOUTKYSOPANHA" image= "https://scontent.fpnh5-6.fna.fbcdn.net/v/t39.30808-6/407326085_1045442653364089_2566174350899690277_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeEwnMeVLWO0qFFRbaXLkKsm4ULn7ajDBVLhQuftqMMFUjpPeOoiipp9VuCdfQiQ0V2o1RSd0zqzE7_mDS6sBOUA&_nc_ohc=AS4--BCDX70Q7kNvgHr3FUE&_nc_zt=23&_nc_ht=scontent.fpnh5-6.fna&_nc_gid=A2U4mJtOArtEty4mjw-pvXk&oh=00_AYDdlJrzaOsiIOmrvG4C2yetrqRZh2PhwY6bum9nyw7jlQ&oe=673F456A" />
-                    </div>
-                  </template>
+           
                   <p class="m-0">
                   I am a Junior developer and ICT at Royal University Of Phnom Penh.
                   </p>
                   <p class="m-0">
                   As a Developer I take several different project.
                   </p>
-                  <p class="m-0">
+                  <p class="mb-2">
                     I am very passionate about improving my coding skills & developing
 applications & websites.
                   </p>
-                  <br>
-                  <p>
+              </div>
+              <hr>
+              <div class="brif-bg mb-2 text-start">
+                <div class="row row-cols-1 row-cols-lg-2 g-2 g-lg-3">
+        <div class="col">
+          <div class="">
+            <i class="fa-solid fa-cake-candles" style="color: #74C0FC;"><span class="font-medium ml-3">  : 02-03-2006</span></i>
+            <i class="fa-solid fa-location-dot" style="color: #74C0FC;"><span class="font-medium ml-3">  : Chamkar Daung, Phnom Penh</span></i>
+            <i class="fa-solid fa-school" style="color: #74C0FC;"><span class="font-medium ml-1"> : Royal University Of Phnom Penh</span></i>
+          </div>
+        </div>
+        <div class="col">
+          <div class="">
+            <i class="fa-solid fa-calendar" style="color: #74C0FC;"><span class="font-medium ml-2"> : 18</span></i>
+            <i class="fa-brands fa-google-scholar" style="color: #74C0FC;"><span class="font-medium ml-2">: Batcholor|Present</span></i>
+          </div>
+        </div>
+      </div>
+              </div>
+              <div class="email-phone">
+                <p>
                     <span class=" font-medium text-cyan-500">Email:</span>
                     houtkysopanha69@gmail.com
                   </p>
-                </Fieldset>
+                  <p >
+                    <span class=" font-medium text-cyan-500">Phone: </span>
+                    +855 99 654 752
+                  </p>
               </div>
               <br />
               <div>
@@ -72,8 +90,7 @@ applications & websites.
 </template>
 
 <script>
-import Fieldset from 'primevue/fieldset';
-import Chip from 'primevue/chip';
+
 import Button from 'primevue/button';
 import FormContact from './FormContact.vue';
 
@@ -81,8 +98,6 @@ import FormContact from './FormContact.vue';
 export default {
   name: "AboutMe",
   components: {
-    Fieldset,
-    Chip,
     Button,
     FormContact,
 
@@ -134,12 +149,6 @@ export default {
   inherits: false;
 }
 
-/* .card img {
-  margin: 0;
-  margin-left: 20px;
-  margin-top: 20px;
-} */
-
 @keyframes spin{
   from{
     --angle: 0deg;
@@ -167,6 +176,7 @@ export default {
   position: relative;
   width: 400px;
   height: 450px;
+  border: 10px solid white;
 }
 .box-contents {
   position: absolute;
@@ -174,7 +184,7 @@ export default {
   right: 0;
   bottom: 0;
   left: 0;
-  background: url(https://scontent.fpnh5-6.fna.fbcdn.net/v/t39.30808-6/407326085_1045442653364089_2566174350899690277_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeEwnMeVLWO0qFFRbaXLkKsm4ULn7ajDBVLhQuftqMMFUjpPeOoiipp9VuCdfQiQ0V2o1RSd0zqzE7_mDS6sBOUA&_nc_ohc=AS4--BCDX70Q7kNvgHr3FUE&_nc_zt=23&_nc_ht=scontent.fpnh5-6.fna&_nc_gid=A2U4mJtOArtEty4mjw-pvXk&oh=00_AYDdlJrzaOsiIOmrvG4C2yetrqRZh2PhwY6bum9nyw7jlQ&oe=673F456A) 50% 50% / cover no-repeat;
+  background: url(../assets/MyPhoto.jpg) 50% 50% / cover no-repeat;
   box-shadow: 0 0 50px rgba(0, 0, 0, .3);
   transition: .5s ease;
 }
@@ -257,6 +267,63 @@ export default {
   transform: perspective(1000px) rotateX(-10deg) rotateY(10deg) rotateZ(2deg);
 }
 
+@media (max-width: 1200px) {
+  h1 {
+    font-size: 1.8rem;
+  }
 
+  h4 {
+    font-size: 1.2rem;
+  }
 
+  .text-center {
+    text-align: center;
+  }
+
+  .p-3 {
+    padding: 1rem !important;
+  }
+
+  .box {
+    width: 100% !important;
+  }
+}
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+  }
+
+  .box {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 576px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h4 {
+    font-size: 1.2rem;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .p-3 {
+    padding: 1rem !important;
+  }
+
+  .box {
+    width: 100% !important;
+    justify-content: center;
+    align-items: center;
+    margin: auto !important;
+  }
+}
 </style>

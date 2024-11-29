@@ -1,16 +1,16 @@
 <template>
-    <div class="all-container bg-black grid-background ">
+    <div class="all-container  bg-black grid-background ">
         <backgroundBox />
         <div class="wrapper">
             <HeaderBar />
             <div class="main-content">
-                <div class="body1 mb-0">
+                <div class="body1 mb-20">
                     <section id="home">
                         <BodyPage />
                     </section>
                     
                 </div>
-                <div class="section-aboutme">
+                <div class="section-aboutme mb-48">
                     <section id="aboutme">
                     <AboutMe />
                 </section>
