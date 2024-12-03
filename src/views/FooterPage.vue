@@ -76,7 +76,7 @@
     </div>
     <hr class="p-3 m-0">
     <div class="copyright text-center">
-        <p>Design by Heart | Houtkysopanha | Portfolio @2024</p>
+        <p class="mb-0">Design by Heart | Houtkysopanha | Portfolio @2024</p>
     </div>
         </div>
     </div>
@@ -156,5 +156,11 @@ li a{
 
 .social-menu ul li:nth-child(4) a:hover {
   background-color: #000; /* CodePen */
+}
+@media (max-width: 576px) {
+  .copyright p{
+    font-size: 10px;
+  }
+  
 }
 </style>

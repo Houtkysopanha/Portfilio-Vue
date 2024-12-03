@@ -1,75 +1,35 @@
 <template>
   <div class="main-contact">
-    <header>
-      <h1 class="text-4xl text-center">
-        GET IN TOUCH
-      </h1>
+    <header class="mb-10">
+      <h1 class="text-4xl text-center">GET IN TOUCH</h1>
     </header>
     <div class="Box">
       <div class="row row-cols-1 g-0 text-center">
         <div class="col-sm-12 col-md-6 bg-box1">
           <img src="../assets/contact.png" alt="Contact" />
         </div>
-        <div class="col-sm-12 col-md-6 bg-box2">
-          <form class="form" @input="validateInput">
-            <div class="section" :class="{ invalid: errors.name }">
-              <input
-                class="input"
-                type="text"
-                name="name"
-                id="name"
-                v-model="formData.name"
-                placeholder="Your name"
-                required
-              />
-              <label class="label" for="name">Your name</label>
-              <div class="error">{{ errors.name }}</div>
-            </div>
-
-            <div class="section" :class="{ invalid: errors.email }">
-              <input
-                class="input"
-                type="email"
-                name="email"
-                id="email"
-                v-model="formData.email"
-                placeholder="Email address"
-                required
-              />
-              <label class="label" for="email">Email address</label>
-              <div class="error">{{ errors.email }}</div>
-            </div>
-
-            <div class="section" :class="{ invalid: errors.phone }">
-              <input
-                class="input"
-                type="text"
-                name="phone"
-                id="phone"
-                v-model="formData.phone"
-                placeholder="Phone"
-                required
-              />
-              <label class="label" for="phone">Phone</label>
-              <div class="error">{{ errors.phone }}</div>
-            </div>
-
-            <div class="section" :class="{ invalid: errors.textarea }">
-              <textarea
-                class="input"
-                name="textarea"
-                id="textarea"
-                v-model="formData.textarea"
-                placeholder="Comment"
-                rows="4"
-                required
-              ></textarea>
-              <label class="label" for="textarea">Comment</label>
-              <div class="error">{{ errors.textarea }}</div>
-            </div>
-
-            <input class="input submit" type="submit" value="Submit" @click.prevent="submitForm" />
-          </form>
+        <div class="col-sm-12 p-5 col-md-6 bg-box2">
+          <div class="header">
+            <p class=" text-3xl">Please contact us.</p>
+            <hr>
+          </div>
+        <form action="">
+          <div class="fullname p-3">
+            <input class="p-3" type="text" name="" placeholder="Full Name" id="">
+          </div>
+          <div class="email p-3">
+            <input class="p-3" type="text" name="" placeholder="Your Email" id="">
+          </div>
+          <div class="phone p-3">
+            <input class="p-3" type="text" name="" placeholder="Phone Number" id="">
+          </div>
+          <div class="comment p-3">
+            <textarea class="p-3 " name="textarea" placeholder="Comment" id=""></textarea>
+          </div>
+           <div class="submit p-3">
+            <button class="p-3 bg-slate-600" type="submit">Submit</button>
+           </div>
+        </form>
         </div>
       </div>
     </div>
@@ -77,40 +37,37 @@
 </template>
 
 <script>
-export default{
-    name: 'ContactPage',
-    data() {
+export default {
+  name: "ContactPage",
+  data() {
     return {
       formData: {
-        name: '',
-        email: '',
-        phone: '',
-        textarea: '',
-      },
-      errors: {
-        name: '',
-        email: '',
-        phone: '',
-        textarea: '',
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
       },
     };
   },
   methods: {
-    validateInput(event) {
-      const { name, validationMessage } = event.target;
-      this.errors[name] = validationMessage;
+    handleSubmit() {
+      // For demonstration, log the form data
+      console.log("Form Submitted: ", this.formData);
+
+      // You can send the data to an API or perform other actions here
+      alert("Your message has been sent!");
+      this.resetForm();
     },
-    submitForm() {
-      if (Object.values(this.errors).some((error) => error !== '') || 
-          Object.values(this.formData).some((field) => field === '')) {
-        alert('Please fix the errors before submitting.');
-      } else {
-        alert('Form submitted successfully!');
-        console.log(this.formData); // Process form data as needed
-      }
+    resetForm() {
+      this.formData = {
+        name: "",
+        email: "",
+        phone: "",
+        message: "",
+      };
     },
   },
-}
+};
 </script>
 <style scoped>
 /* Main Container */
@@ -143,49 +100,21 @@ export default{
 
 .bg-box2 {
   padding: 1rem;
+  background: #3f3f46;
+  border-radius: 20px;
 }
 
-form {
-  margin-top: 10px;
+input{
+  border-radius: 30px;
 }
-
-.section {
-  margin-bottom: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Input Fields */
-.input {
-  font-family: inherit;
-  font-size: 1rem;
-  color: inherit;
-  border-radius: 7px;
-  padding: 0.7rem 1rem;
-  border: none;
+textarea{
+  border-radius: 30px;
   width: 100%;
-  max-width: 400px;
-  box-sizing: border-box;
-  outline: 1px solid var(--line);
+  height: 10vh;
 }
-
-.input:focus {
-  outline: 1px solid var(--line-active);
+.submit button{
+  border-radius: 30px;
 }
-
-.input[type='submit'] {
-  cursor: pointer;
-  max-width: 200px;
-}
-
-/* Labels */
-.label {
-  margin: 0.5rem 0;
-  text-align: left;
-  width: 100%;
-}
-
 /* Responsive Adjustments */
 @media screen and (min-width: 768px) {
   .Box {

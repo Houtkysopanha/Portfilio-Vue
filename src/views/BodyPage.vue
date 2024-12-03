@@ -9,10 +9,11 @@
                 <h3 class="text-4xl font-bold" data-aos="fade-down">&lt;/ Hi, I'm PANHA &gt;</h3>
                 <h2 class="text-5xl leading-tight font-bold">NICE TO MEET YOU!!</h2>
                 <div class="typewriter">
-                  <h2 id="typewriter-text" class="typewriter-text font-bold gradient-text">
-                    {{ displayedText }}
-                  </h2>
-                </div>
+              <h2 id="typewriter-text" class="typewriter-text gradient-text">
+                 {{ displayedText }}
+              </h2>
+              </div>
+
                 <p class="description">
                   I am good at building Web Applications and Websites. <br />
                   I am very passionate about improving my coding skills & developing applications.
@@ -39,6 +40,7 @@
 </template>
 
 <script>
+
 import BtnContact from "./BtnContact.vue";
 import BtnSocial from "./BtnSocial.vue";
 import ScrollTop from "primevue/scrolltop";
@@ -51,52 +53,54 @@ export default {
   },
   name: "BodyPage",
   data() {
-    return {
-      words: [
-        "I am into a FRONTEND-DEVELOPER.",
-        "Now, I am years 2 of University.",
-        "Vue JS Framework.",
-        "DESIGN ENTHUSIAST.",
-       
-      ],
-      currentWordIndex: 1,
-      displayedText: "",
-      isDeleting: false,
-      typingSpeed: 100, // Typing speed in milliseconds
-      deletingSpeed: 50, // Deleting speed in milliseconds
-      pauseBetweenWords: 1000, // Pause before typing the next word
-    };
-  },
-  mounted() {
-    this.startTyping();
-  },
-  beforeUnmount() {
-    clearTimeout(this.typingTimeout);
-  },
-  methods: {
-    startTyping() {
-      const currentWord = this.words[this.currentWordIndex];
+  return {
+    words: [
+      "I am into a FRONTEND-DEVELOPER.",
+      "Currently, I am years 2.",
+      "HTML5,CSS3,Javascript,..",
+      "Vue JS Framework.",
+      "DESIGN ENTHUSIAST.",
+    ],
+    currentWordIndex: 0,
+    displayedText: "",
+    isDeleting: false,
+    typingSpeed: 100, // Typing speed in milliseconds
+    deletingSpeed: 50, // Deleting speed in milliseconds
+    pauseBetweenWords: 1000, // Pause before typing the next word
+    pauseAfterDelete: 500, // Pause after deleting the current word
+  };
+},
+mounted() {
+  this.startTyping();
+},
+beforeUnmount() {
+  clearTimeout(this.typingTimeout);
+},
+methods: {
+  startTyping() {
+    const currentWord = this.words[this.currentWordIndex];
 
-      if (!this.isDeleting && this.displayedText.length < currentWord.length) {
-        // Typing mode
-        this.displayedText = currentWord.substring(0, this.displayedText.length + 1);
-        this.typingTimeout = setTimeout(this.startTyping, this.typingSpeed);
-      } else if (this.isDeleting && this.displayedText.length > 0) {
-        // Deleting mode
-        this.displayedText = currentWord.substring(0, this.displayedText.length - 1);
-        this.typingTimeout = setTimeout(this.startTyping, this.deletingSpeed);
-      } else if (!this.isDeleting && this.displayedText.length === currentWord.length) {
-        // Pause after typing the full word
-        this.isDeleting = true;
-        this.typingTimeout = setTimeout(this.startTyping, this.pauseBetweenWords);
-      } else if (this.isDeleting && this.displayedText.length === 0) {
-        // Switch to the next word
-        this.isDeleting = false;
-        this.currentWordIndex = (this.currentWordIndex + 1) % this.words.length;
-        this.typingTimeout = setTimeout(this.startTyping, this.typingSpeed);
-      }
-    },
+    if (!this.isDeleting && this.displayedText.length < currentWord.length) {
+      // Typing mode
+      this.displayedText = currentWord.substring(0, this.displayedText.length + 1);
+      this.typingTimeout = setTimeout(this.startTyping, this.typingSpeed);
+    } else if (this.isDeleting && this.displayedText.length > 0) {
+      // Deleting mode
+      this.displayedText = currentWord.substring(0, this.displayedText.length - 1);
+      this.typingTimeout = setTimeout(this.startTyping, this.deletingSpeed);
+    } else if (!this.isDeleting && this.displayedText.length === currentWord.length) {
+      // Pause after typing the full word
+      this.isDeleting = true;
+      this.typingTimeout = setTimeout(this.startTyping, this.pauseBetweenWords);
+    } else if (this.isDeleting && this.displayedText.length === 0) {
+      // Pause before switching to the next word
+      this.isDeleting = false;
+      this.currentWordIndex = (this.currentWordIndex + 1) % this.words.length;
+      this.typingTimeout = setTimeout(this.startTyping, this.pauseAfterDelete);
+    }
   },
+},
+
 };
 </script>
 
@@ -151,25 +155,35 @@ export default {
 .typewriter {
   white-space: nowrap;
   overflow: hidden;
-  /* border-right: 4px solid #212121; */
+  display: inline-block;
+  position: relative;
+  height: 2.5rem; /* Set a fixed height for the container */
 }
 
 .typewriter-text {
   font-size: 2rem;
-  animation: cursor 0.75s step-end infinite;
-
+  font-weight: bold;
+  display: inline-block;
+  width: 30ch; /* Reserve space for the longest word */
+  text-align: left;
+  vertical-align: top;
+  animation: cursor-blink 0.75s step-end infinite;
 }
+
 .gradient-text {
-  background:  linear-gradient(to right, rgb(99, 102, 241), rgb(168, 85, 247), rgb(236, 72, 153));
+  background: linear-gradient(to right, rgb(99, 102, 241), rgb(168, 85, 247), rgb(236, 72, 153));
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
 }
 
-@keyframes cursor {
+@keyframes cursor-blink {
   50% {
-    border-color: red;
+    border-right: 2px solid #212121;
   }
 }
+
+
 
 /* Responsive Styles */
 @media (max-width: 1024px) {
