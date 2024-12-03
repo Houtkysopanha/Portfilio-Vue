@@ -6,7 +6,7 @@
       </div>
       <div class="contain">
         <div class="row row-cols-1 g-0 text-start">
-          <div class="col-6 col-md-4">
+          <div class="col-6 box1 col-md-4">
             <div class="demo">
   <div class="box mb-2">
     <div class="hover-point"></div>
@@ -285,7 +285,10 @@ export default {
   }
 
   .box {
-    width: 100% !important;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 @media (max-width: 768px) {
@@ -318,9 +321,12 @@ export default {
   .p-3 {
     padding: 1rem !important;
   }
-
+  .box1{
+    width: 100%;
+  }
   .box {
-    width: 100% !important;
+    width: 200px;
+    height: 200px;
     justify-content: center;
     align-items: center;
     margin: auto !important;

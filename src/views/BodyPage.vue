@@ -40,6 +40,7 @@
 </template>
 
 <script>
+
 import BtnContact from "./BtnContact.vue";
 import BtnSocial from "./BtnSocial.vue";
 import ScrollTop from "primevue/scrolltop";

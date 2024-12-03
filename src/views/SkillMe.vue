@@ -6,7 +6,7 @@
       </div>
       <div class="content-skill">
         <div
-          class="grid grid-cols-4 gap-4 p-4 bg-zinc-900 place-content-center"
+          class="grid  sm:grid-cols-3 md:grid-cols-4  grid-cols-3 gap-4 p-4 bg-zinc-900 place-content-center"
         >
           <div class="box-1">
             <div class="logo">
@@ -330,5 +330,10 @@ export default {
 }
 .logo {
   margin: 20px 0px 15px 0px;
+}
+@media (max-width: 576px) {
+  .name p{
+    font-size: 10px;
+  }
 }
 </style>

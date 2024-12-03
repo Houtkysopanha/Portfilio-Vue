@@ -1,5 +1,5 @@
 <template>
-    <div class="all-container  bg-black grid-background ">
+    <div  class=" all-container  bg-black grid-background ">
         <backgroundBox />
         <div class="wrapper">
             <HeaderBar />
@@ -26,12 +26,12 @@
                     </section>
                 </div>
                 <div class="secton-mypro">
-                    <section >
+                    <section id="work">
                         <ProjectMade />
                     </section>
                 </div>
                 <div class="secton-myexper">
-                    <section >
+                    <section id="experience">
                         <ExperPage />
                     </section>
                 </div>
@@ -102,5 +102,9 @@ export default {
     background-color: #8a5cf6;
     transform: translate(0, 0);
     transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.dark .main-layout {
+  background: black;
+  color: white;
 }
 </style>
