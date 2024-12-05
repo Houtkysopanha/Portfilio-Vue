@@ -5,7 +5,7 @@
         <div class="bg-circle"></div>
       </div>
       <div class="front">
-        <span>Contact Me</span>
+        <span><a href="https://t.me/houtKysopanha" target="blank">Contact Me</a></span>
       </div>
     </button>
   </div>
@@ -86,7 +86,10 @@ button {
   border-radius: inherit;
   transition: color 200ms ease;
 }
-
+.front a{
+  color: whitesmoke;
+  text-decoration: none;
+}
 /* Hover and Focus Effects */
 .button:hover .bg-circle,
 .button:focus .bg-circle {

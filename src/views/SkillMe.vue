@@ -1,297 +1,19 @@
 <template>
   <div class="main-skillme">
     <div class="container">
-      <div class="Subject text-center mb-20">
-        <h1 class="text-4xl">&lt; / Skill & Ablity &gt;</h1>
+      <div class="subject text-center mb-10">
+        <h1 class="title">&lt; / Skills & Abilities &gt;</h1>
       </div>
       <div class="content-skill">
-        <div
-          class="grid  sm:grid-cols-3 md:grid-cols-4  grid-cols-3 gap-4 p-4 bg-zinc-900 place-content-center"
-        >
-          <div class="box-1">
+        <div class="grid">
+          <div class="skill-card" v-for="skill in skills" :key="skill.name">
             <div class="logo">
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
-              />
+              <img :src="skill.icon" :alt="skill.name" />
             </div>
             <div class="name text-center">
-              <p>HTML5</p>
-              <div
-            
-              
-                class="progress"
-                role="progressbar"
-                aria-label="Example 1px high"
-                aria-valuenow="25"
-                aria-valuemin="0"
-                aria-valuemax="100"
-                style="height: 4px; background-color: black
-                      "
-              >
-                <div class="progress-bar" style="width: 85%; background-color: whitesmoke;"></div>
-              </div>
-            </div>
-          </div>
-          <div class="box-1">
-            <div class="logo">
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
-              />
-            </div>
-            <div class="name text-center">
-              <p>CSS3</p>
-              <div
-            
-              
-                class="progress"
-                role="progressbar"
-                aria-label="Example 1px high"
-                aria-valuenow="25"
-                aria-valuemin="0"
-                aria-valuemax="100"
-                style="height: 4px; background-color: black
-                      "
-              >
-                <div class="progress-bar" style="width: 85%; background-color: whitesmoke;"></div>
-              </div>
-            </div>
-          </div>
-          <div class="box-1">
-            <div class="logo">
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
-              />
-            </div>
-            <div class="name text-center">
-              <p>JAVASCRIPT</p>
-              <div
-            
-              
-                class="progress"
-                role="progressbar"
-                aria-label="Example 1px high"
-                aria-valuenow="25"
-                aria-valuemin="0"
-                aria-valuemax="100"
-                style="height: 4px; background-color: black
-                      "
-              >
-                <div class="progress-bar" style="width: 50%; background-color: whitesmoke;"></div>
-              </div>
-            </div>
-          </div>
-          <div class="box-1">
-            <div class="logo">
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg"
-              />
-            </div>
-            <div class="name text-center">
-              <p>BOOTSTRAP</p>
-              <div
-            
-              
-                class="progress"
-                role="progressbar"
-                aria-label="Example 1px high"
-                aria-valuenow="25"
-                aria-valuemin="0"
-                aria-valuemax="100"
-                style="height: 4px; background-color: black
-                      "
-              >
-                <div class="progress-bar" style="width: 65%; background-color: whitesmoke;"></div>
-              </div>
-            </div>
-          </div>
-          <div class="box-1">
-            <div class="logo">
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
-              />
-            </div>
-            <div class="name text-center">
-              <p>TAILWANDCSS</p>
-              <div
-            
-              
-                class="progress"
-                role="progressbar"
-                aria-label="Example 1px high"
-                aria-valuenow="25"
-                aria-valuemin="0"
-                aria-valuemax="100"
-                style="height: 4px; background-color: black
-                      "
-              >
-                <div class="progress-bar" style="width: 50%; background-color: whitesmoke;"></div>
-              </div>
-            </div>
-          </div>
-          <div class="box-1">
-            <div class="logo">
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg"
-              />
-            </div>
-            <div class="name text-center">
-              <p>VUEJS</p>
-              <div
-            
-              
-                class="progress"
-                role="progressbar"
-                aria-label="Example 1px high"
-                aria-valuenow="25"
-                aria-valuemin="0"
-                aria-valuemax="100"
-                style="height: 4px; background-color: black
-                      "
-              >
-                <div class="progress-bar" style="width: 50%; background-color: whitesmoke;"></div>
-              </div>
-            </div>
-          </div>
-          <div class="box-1">
-            <div class="logo">
-              <img
-                src="https://img.icons8.com/?size=100&id=ixfybwBsCCEH&format=png&color=000000"
-              />
-            </div>
-            <div class="name text-center">
-              <p>PRIMEVUE</p>
-              <div
-            
-              
-                class="progress"
-                role="progressbar"
-                aria-label="Example 1px high"
-                aria-valuenow="25"
-                aria-valuemin="0"
-                aria-valuemax="100"
-                style="height: 4px; background-color: black
-                      "
-              >
-                <div class="progress-bar" style="width: 45%; background-color: whitesmoke;"></div>
-              </div>
-            </div>
-          </div>
-          <div class="box-1">
-            <div class="logo">
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
-              />
-            </div>
-            <div class="name text-center">
-              <p>GIT</p>
-              <div
-            
-              
-                class="progress"
-                role="progressbar"
-                aria-label="Example 1px high"
-                aria-valuenow="25"
-                aria-valuemin="0"
-                aria-valuemax="100"
-                style="height: 4px; background-color: black
-                      "
-              >
-                <div class="progress-bar" style="width: 50%; background-color: whitesmoke;"></div>
-              </div>
-            </div>
-          </div>
-          <div class="box-1">
-            <div class="logo">
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
-              />
-            </div>
-            <div class="name text-center">
-              <p>GITHUB</p>
-              <div
-            
-              
-                class="progress"
-                role="progressbar"
-                aria-label="Example 1px high"
-                aria-valuenow="25"
-                aria-valuemin="0"
-                aria-valuemax="100"
-                style="height: 4px; background-color: black
-                      "
-              >
-                <div class="progress-bar" style="width: 50%; background-color: whitesmoke;"></div>
-              </div>
-            </div>
-          </div>
-          <div class="box-1">
-            <div class="logo">
-              <img
-                src="https://img.icons8.com/?size=100&id=24895&format=png&color=000000"
-              />
-            </div>
-            <div class="name text-center">
-              <p>NPM</p>
-              <div
-            
-              
-                class="progress"
-                role="progressbar"
-                aria-label="Example 1px high"
-                aria-valuenow="25"
-                aria-valuemin="0"
-                aria-valuemax="100"
-                style="height: 4px; background-color: black
-                      "
-              >
-                <div class="progress-bar" style="width: 50%; background-color: whitesmoke;"></div>
-              </div>
-            </div>
-          </div>
-          <div class="box-1">
-            <div class="logo">
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg"
-              />
-            </div>
-            <div class="name text-center">
-              <p>POSTMAN</p>
-              <div
-            
-              
-                class="progress"
-                role="progressbar"
-                aria-label="Example 1px high"
-                aria-valuenow="25"
-                aria-valuemin="0"
-                aria-valuemax="100"
-                style="height: 4px; background-color: black
-                      "
-              >
-                <div class="progress-bar" style="width: 50%; background-color: whitesmoke;"></div>
-              </div>
-            </div>
-          </div>
-          <div class="box-1">
-            <div class="logo">
-              <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original-wordmark.svg"
-              />
-            </div>
-            <div class="name text-center">
-              <p>VERCEL</p>
-              <div
-
-                class="progress"
-                role="progressbar"
-                aria-label="Example 1px high"
-                aria-valuenow="25"
-                aria-valuemin="0"
-                aria-valuemax="100"
-                style="height: 4px; background-color: black
-                      "
-              >
-                <div class="progress-bar" style="width: 50%; background-color: whitesmoke;"></div>
+              <p>{{ skill.name }}</p>
+              <div class="progress-bar-container">
+                <div class="progress-bar" :style="{ width: skill.level + '%' }"></div>
               </div>
             </div>
           </div>
@@ -300,40 +22,95 @@
     </div>
   </div>
 </template>
+
 <script>
 export default {
   name: "SkillMe",
+  data() {
+    return {
+      skills: [
+        { name: "HTML5", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", level: 85 },
+        { name: "CSS3", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg", level: 85 },
+        { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", level: 50 },
+        { name: "Bootstrap", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg", level: 65 },
+        { name: "TailwindCSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg", level: 50 },
+        { name: "Vue.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg", level: 50 },
+        { name: "PrimeVue", icon: "https://img.icons8.com/?size=100&id=ixfybwBsCCEH&format=png", level: 45 },
+        { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg", level: 50 },
+        { name: "GitHub", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg", level: 50 },
+        { name: "NPM", icon: "https://img.icons8.com/?size=100&id=24895&format=png", level: 50 },
+        { name: "Postman", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg", level: 50 },
+        { name: "Vercel", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original-wordmark.svg", level: 50 },
+      ],
+    };
+  },
 };
 </script>
+
 <style scoped>
 .main-skillme {
   width: 100%;
-  height: 850px;
-  background-color: black;
+  padding: 50px 0;
+  background: linear-gradient(135deg, #1e293b, #111827);
+  color: #f8fafc;
 }
+
+.subject .title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #38bdf8;
+  margin-bottom: 20px;
+}
+
 .content-skill {
   width: 90%;
-  height: auto;
   margin: auto;
 }
+
 .grid {
-  border: 1px solid #3f3f46;
-  border-radius: 5px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
-.box-1 {
-  background: #3f3f46;
-  border-radius: 10px;
+
+.skill-card {
+  background: linear-gradient(135deg, #3b82f6, #1e293b);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
-.box-1 img {
+
+.skill-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.logo img {
   width: 70px;
   margin: auto;
+  display: block;
 }
-.logo {
-  margin: 20px 0px 15px 0px;
+
+.name p {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
-@media (max-width: 576px) {
-  .name p{
-    font-size: 10px;
-  }
+
+.progress-bar-container {
+  background: #334155;
+  border-radius: 4px;
+  height: 6px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.progress-bar {
+  height: 100%;
+  background: #f8fafc;
+  border-radius: 4px;
+  transition: width 0.5s ease;
 }
 </style>
