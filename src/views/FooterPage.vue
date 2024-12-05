@@ -1,166 +1,144 @@
 <template>
-    <div class="main-footer">
-        <div class="Box">
-            <div class="container text-center">
-      <div class="row text-start row-cols-1 row-cols-lg-3 g-1 g-lg-2">
-        <div class="col ">
-          <div class="p-3">
-            <div class="name">
-                <h1 class="text-2xl">Panha Portfolio</h1>
-            </div>
-            <div class="describe">
-                <p>Thank you for visiting my personal portfolio Website.</p>
-                <p>Contact me with my social.</p>
-            </div>
-        </div>
-        </div>
+  <footer class="main-footer">
+    <div class="container text-center py-5">
+      <div class="row text-start row-cols-1 row-cols-lg-3 g-4">
+        <!-- About Section -->
         <div class="col">
-          <div class="p-3 ">
-            <h1 class="text-2xl">
-                Quick Links
-            </h1>
-            <div class="link ml-5">
-                
-                    <i class="fa-regular fa-circle-right"> <span class="font-medium"> Home</span></i>
-                    <i class="fa-regular fa-circle-right"> <span class="font-medium"> AboutMe</span></i>
-                    <i class="fa-regular fa-circle-right"> <span class="font-medium"> Skills</span></i>
-                    <i class="fa-regular fa-circle-right"> <span class="font-medium"> Education</span></i>
-                    <i class="fa-regular fa-circle-right"> <span class="font-medium"> Work</span></i>
-                    <i class="fa-regular fa-circle-right"> <span class="font-medium"> Experience</span></i>
-                
-               
-            </div>
+          <h2 class="footer-title">Panha Portfolio</h2>
+          <p class="footer-text">
+            Thank you for visiting my personal portfolio website. Contact me via my social channels.
+          </p>
         </div>
-        </div>
+        
+        <!-- Quick Links Section -->
         <div class="col">
-          <div class="p-3 ">
-           <div class="header">
-            <h1 class="text-2xl">
-                Contact Infor
-            </h1>
-           </div>
-           <div class="Contact-infor ml-5">
-                
-                <i class="fa-solid fa-phone" style="color: #74C0FC;"><span class=" font-medium"> +855 99 654 752</span></i>
-                <i class="fa-solid fa-envelope" style="color: #74C0FC;"><span class="font-medium"> houtkysopanha69@gmail.com</span></i>
-                <i class="fa-solid fa-map" style="color: #74C0FC;"><span class="font-medium"> Dangkor, Phnom Penh </span></i>
-                
+          <h2 class="footer-title">Quick Links</h2>
+          <ul class="footer-links">
+            <li><a href="#" class="footer-link">Home</a></li>
+            <li><a href="#" class="footer-link">About Me</a></li>
+            <li><a href="#" class="footer-link">Skills</a></li>
+            <li><a href="#" class="footer-link">Education</a></li>
+            <li><a href="#" class="footer-link">Work</a></li>
+            <li><a href="#" class="footer-link">Experience</a></li>
+          </ul>
         </div>
-        <div class="social-menu ml-4">
-  <ul>
-    <li>
-      <a href="https://github.com/sanketbodke" target="_blank" aria-label="GitHub">
-        <i class="fab fa-github"></i>
-      </a>
-    </li>
-    <li>
-      <a href="https://www.instagram.com/imsanketbodke/" target="_blank" aria-label="Instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
-    </li>
-    <li>
-      <a href="https://www.linkedin.com/in/sanket-bodake-995b5b205/" target="_blank" aria-label="LinkedIn">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-    </li>
-    <li>
-      <a href="https://codepen.io/sanketbodke" target="_blank" aria-label="CodePen">
-        <i class="fab fa-codepen"></i>
-      </a>
-    </li>
-  </ul>
-</div>
-</div>
+        
+        <!-- Contact Info Section -->
+        <div class="col">
+          <h2 class="footer-title">Contact Info</h2>
+          <ul class="contact-info">
+            <li><i class="fa-solid fa-phone"></i> +855 99 654 752</li>
+            <li><i class="fa-solid fa-envelope"></i> houtkysopanha69@gmail.com</li>
+            <li><i class="fa-solid fa-map-marker-alt"></i> Dangkor, Phnom Penh</li>
+          </ul>
+          <!-- Social Icons -->
+          <div class="social-icons">
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="CodePen"><i class="fab fa-codepen"></i></a>
+          </div>
         </div>
       </div>
     </div>
-    <hr class="p-3 m-0">
-    <div class="copyright text-center">
-        <p class="mb-0">Design by Heart | Houtkysopanha | Portfolio @2024</p>
+    <hr>
+    <div class="copyright text-center py-3">
+      <p>Design by Heart | Houtkysopanha | Portfolio ©2024</p>
     </div>
-        </div>
-    </div>
+  </footer>
 </template>
+
 <script>
 export default {
-    name: 'FooterPage',
-}
+  name: 'FooterPage',
+};
 </script>
+
 <style scoped>
+/* Footer Base Styling */
 .main-footer {
-    background-color: #3f3f46;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    height: auto;
-}
-.social-menu {
-  margin-top: 20px; /* Adds some spacing from the top */
+  background-color: #3f3f46;
+  color: #ffffff;
 }
 
-.social-menu ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  margin: 0;
+.footer-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #74c0fc;
+}
+
+.footer-text,
+.footer-links li,
+.contact-info li {
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.footer-links,
+.contact-info {
   list-style: none;
+  padding: 0;
 }
 
-.social-menu ul li {
-  margin: 0 10px; /* Adjust spacing between icons */
-}
-li a{
-    text-decoration: none;
-} 
-
-.social-menu ul li a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  background-color: #fff;
-  transition: transform 0.3s, background-color 0.3s;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-}
-.social-menu ul li a i{
-    margin: 0px 10px;
-}
-.social-menu ul li a:hover {
-  transform: scale(1.1); /* Slightly enlarges the icon on hover */
+.footer-links li,
+.contact-info li {
+  margin-bottom: 0.5rem;
 }
 
-.social-menu ul li a i {
-  color: #3f3f46; /* Default color for icons */
-  font-size: 24px;
+.footer-link {
+  color: #ffffff;
+  text-decoration: none;
   transition: color 0.3s;
 }
 
-.social-menu ul li a:hover i {
-  color: #fff; /* Changes icon color to white on hover */
+.footer-link:hover {
+  color: #74c0fc;
 }
 
-.social-menu ul li:nth-child(1) a:hover {
-  background-color: #333; /* GitHub */
+.contact-info li i {
+  color: #74c0fc;
+  margin-right: 0.5rem;
 }
 
-.social-menu ul li:nth-child(2) a:hover {
-  background-color: #e4405f; /* Instagram */
+.social-icons {
+  margin-top: 1rem;
 }
 
-.social-menu ul li:nth-child(3) a:hover {
-  background-color: #0077b5; /* LinkedIn */
+.social-icons a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  margin: 0 5px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #3f3f46;
+  transition: all 0.3s;
 }
 
-.social-menu ul li:nth-child(4) a:hover {
-  background-color: #000; /* CodePen */
+.social-icons a:hover {
+  background-color: #74c0fc;
+  color: #ffffff;
 }
-@media (max-width: 576px) {
-  .copyright p{
-    font-size: 10px;
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-title {
+    font-size: 1.25rem;
   }
-  
+
+  .footer-text,
+  .footer-links li,
+  .contact-info li {
+    font-size: 0.8rem;
+  }
+
+  .social-icons a {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+  }
 }
 </style>

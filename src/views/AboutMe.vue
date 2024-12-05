@@ -1,8 +1,10 @@
 <template>
-  <div class="main-aboutme bg-black">
+  <div class="main-aboutme bg-gradient">
     <div class="container">
-      <div class="AboutMe mb-20   text-center">
-        <h1> &lt; / About Me &gt; </h1>
+      <div class="AboutMe mb-20   text-center"> 
+        <h1 style=" font-size: 2.5rem;
+  font-weight: 700;
+  color: #38bdf8;"> &lt; / About Me &gt; </h1>
       </div>
       <div class="contain">
         <div class="row row-cols-1 g-0 text-start">
@@ -22,71 +24,66 @@
 </div>
     <p class="text-center">&#64;houtkysopanha</p>
           </div>
-          <div class="col-sm-6 col-md-8  p-3">
-            <div class="content-text ">
-              <h4 class="mb-3 text-4xl">My BRIEF BACKGROUND</h4>
-              <div class="skill">
+          <div class="col-md-8 p-3">
+            <div class="content-text">
+              <h4 class="text-4xl text-highlight mb-3">My BRIEF BACKGROUND</h4>
+              <div class="skill mb-3">
                 <p>Frontend Developer</p>
               </div>
-              <div class="note">
-           
-                  <p class="m-0">
-                  I am a Junior developer and ICT at Royal University Of Phnom Penh.
-                  </p>
-                  <p class="m-0">
-                  As a Developer I take several different project.
-                  </p>
-                  <p class="mb-2">
-                    I am very passionate about improving my coding skills & developing
-applications & websites.
-                  </p>
+              <div class="note mb-3">
+                <p>I am a Junior developer and ICT student at Royal University of Phnom Penh.</p>
+                <p>I take on several different projects as a developer.</p>
+                <p>I am passionate about improving my coding skills & developing applications & websites.</p>
               </div>
-              <hr>
-              <div class="brif-bg mb-2 text-start">
-                <div class="row row-cols-1 row-cols-lg-2 g-2 g-lg-3">
-        <div class="col">
-          <div class="">
-            <i class="fa-solid fa-cake-candles" style="color: #74C0FC;"><span class="font-medium ml-3">  : 02-03-2006</span></i>
-            <i class="fa-solid fa-location-dot" style="color: #74C0FC;"><span class="font-medium ml-3">  : Chamkar Daung, Phnom Penh</span></i>
-            <i class="fa-solid fa-school" style="color: #74C0FC;"><span class="font-medium ml-1"> : Royal University Of Phnom Penh</span></i>
-          </div>
-        </div>
-        <div class="col">
-          <div class="">
-            <i class="fa-solid fa-calendar" style="color: #74C0FC;"><span class="font-medium ml-2"> : 18</span></i>
-            <i class="fa-brands fa-google-scholar" style="color: #74C0FC;"><span class="font-medium ml-2">: Batcholor|Present</span></i>
+              <hr />
+              <div class="brief-bg mb-3">
+                <div class="row row-cols-1 row-cols-lg-2 g-2">
+                  <div class="col">
+                    <i class="fa-solid fa-cake-candles text-primary">
+                      <span class="ml-3">: 02-03-2006</span>
+                    </i>
+                    <i class="fa-solid fa-location-dot text-primary">
+                      <span class="ml-3">: Chamkar Daung, Phnom Penh</span>
+                    </i>
+                    <i class="fa-solid fa-school text-primary">
+                      <span class="ml-1">: Royal University of Phnom Penh</span>
+                    </i>
+                  </div>
+                  <div class="col">
+                    <i class="fa-solid fa-calendar text-primary">
+                      <span class="ml-2">: 18</span>
+                    </i>
+                    <i class="fa-brands fa-google-scholar text-primary">
+                      <span class="ml-2">: Bachelor | Present</span>
+                    </i>
+                  </div>
+                </div>
+              </div>
+              <div class="email-phone mb-4">
+                <p>
+                  <span class="font-medium text-cyan-500">Email:</span>
+                  houtkysopanha69@gmail.com
+                </p>
+                <p>
+                  <span class="font-medium text-cyan-500">Phone:</span>
+                  +855 99 654 752
+                </p>
+              </div>
+              <Button
+                class="cv-button no-underline w-40 text-center bg-cyan-600 hover:bg-cyan-700"
+                as="a"
+                label="Detail Me"
+                href="/My CV.pdf"
+                target="_blank"
+                rel="noopener"
+              />
+            </div>
           </div>
         </div>
       </div>
-              </div>
-              <div class="email-phone">
-                <p>
-                    <span class=" font-medium text-cyan-500">Email:</span>
-                    houtkysopanha69@gmail.com
-                  </p>
-                  <p >
-                    <span class=" font-medium text-cyan-500">Phone: </span>
-                    +855 99 654 752
-                  </p>
-              </div>
-              <br />
-              <div>
-                <Button
-                  class="CV no-underline w-40 text-center bg-cyan-600"
-                  as="a"
-                  label="Detail Me"
-                  href="/My CV.pdf"
-                  target="_blank"
-                  rel="noopener"
-                />
-              </div>
-            </div>
-          </div>
           <FormContact />
       </div>
     </div>
-  </div>
-</div>
 </template>
 
 <script>
@@ -109,9 +106,11 @@ export default {
 <style scoped>
 
 .main-aboutme {
-    width: 100%;
-    height: auto;
+  background: linear-gradient(135deg, #2e3b4e, #3b4f69);
+  color: #fff;
+  padding: 5em 0;
 }
+
 .card {
   position: relative;
   padding: 2em;
@@ -171,7 +170,105 @@ export default {
 }
 
 
+.aboutme-header h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #74C0FC;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+}
 
+.heading-title {
+  text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.box-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.box-contents {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url(../assets/MyPhoto.jpg) center/cover no-repeat;
+  transition: transform 0.3s ease;
+}
+
+.hover-point {
+  position: absolute;
+  z-index: 2;
+  width: 33%;
+  height: 33%;
+}
+
+.hover-point:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+
+.hover-point:hover ~ .box-contents {
+  transform: scale(1.05) rotate(5deg);
+}
+
+.content-text {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border-radius: 10px;
+  margin-top: 2rem;
+}
+
+.text-4xl {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.text-highlight {
+  color: #74C0FC;
+}
+
+.skill p {
+  font-size: 1.1rem;
+  color: #74C0FC;
+  padding: 5px 0;
+}
+
+.brief-bg i {
+  font-size: 1rem;
+  color: #74C0FC;
+  margin-bottom: 1rem;
+}
+
+.cv-button {
+  display: inline-block;
+  font-size: 1.2rem;
+  padding: 0.8rem 2rem;
+  margin-top: 2rem;
+  border-radius: 8px;
+  color: #fff;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.cv-button:hover {
+  background-color: #3383b1;
+}
 .box {
   position: relative;
   width: 400px;

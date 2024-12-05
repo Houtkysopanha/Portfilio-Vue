@@ -134,7 +134,7 @@ methods: {
 
 .scrolldown {
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 
 .animated-arrow {
@@ -164,7 +164,7 @@ methods: {
   font-size: 2rem;
   font-weight: bold;
   display: inline-block;
-  width: 30ch; /* Reserve space for the longest word */
+  width: auto;
   text-align: left;
   vertical-align: top;
   animation: cursor-blink 0.75s step-end infinite;
@@ -216,10 +216,11 @@ methods: {
     margin-top: 2rem;
   }
   .typewriter h2 {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
   }
   .description {
     font-size: 0.9rem;
+    text-align: start;
   }
 }
 
@@ -229,10 +230,26 @@ methods: {
     margin-top: 1rem;
   }
   .typewriter h2 {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
   .animated-arrow {
     font-size: 1.5rem;
   }
 }
+@media (max-width: 320px) {
+  h3 {
+    font-size: 20px; /* Adjusts the heading size for smaller screens */
+  }
+  .content {
+    text-align: center; /* Centers text for better readability */
+    margin-top: 1rem; /* Reduces top margin */
+  }
+  .typewriter h2 {
+    font-size: 0.8rem; /* Shrinks font size for the typewriter effect */
+  }
+  .animated-arrow {
+    font-size: 1.5rem; /* Reduces the size of the arrow */
+  }
+}
+
 </style>

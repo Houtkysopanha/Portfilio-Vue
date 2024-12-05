@@ -1,26 +1,29 @@
-
 <template>
-  <div class="mian-myeduc">
+  <div class="main-myeduc">
     <div class="container">
-      <div class="title mb-10 text-center">
-        <h1 class="text-4xl">&lt; / Experience &gt;</h1>
+      <div class="title text-center" style="margin-top: 65px;">
+        <h1 style=" font-size: 2.5rem;
+  font-weight: 700;
+  color: #38bdf8;" class="text-4xl">&lt; / Experience &gt;</h1>
       </div>
       <div class="content">
         <!-- Introduction Section -->
-        <section class="intro">
+        <!-- <section class="intro">
           <p>Explore my journey of learning and accomplishments through the timeline below.</p>
-        </section>
+        </section> -->
 
         <!-- Timeline Section -->
-        <section class="timeline">
+        <section class="timeline text-start">
           <ul>
             <li v-for="(item, index) in timelineItems" :key="index" class="timeline-item">
               <div>
-                <img style=" height: 200px;" :src="item.photo" alt="Timeline Photo" class="timeline-photo" />
-                <p class=" text-start text-2xl font-bold">{{ item.school }}</p>
-                <p class="text-start text-sm font-medium">{{ item.year }}</p>
-                <p class="text-start text-sm font-medium">{{ item.year1 }}</p>
-                <p class="text-start text-success font-bold">{{ item.mark }}</p>
+                <img :src="item.photo" alt="Timeline Photo" class="timeline-photo" />
+                <p class="school-name">{{ item.school }}</p>
+                <hr>
+                <p class="timeline-year">{{ item.dec }}</p>
+                <p class="timeline-year">{{ item.dec1 }}</p>
+                <!-- <p class="mark">{{ item.mark }}</p> -->
+                 <p class="mark1">{{ item.mark }}</p>
               </div>
             </li>
           </ul>
@@ -37,12 +40,12 @@ export default {
     return {
       timelineItems: [
         { 
-          school: "TAING KRASANG HIGHT SCHOOL",
-          year: "2017-2019 | Graduated from Grade 9 National Education Program", 
-          year1: "2020-2023 | Graduated from Grade 12 National Education Program", 
+          school: "Ministy of Interior",
+          dec: "General Department of Digital Technology and Media", 
+          dec1: "Work as a position Frontend Developer at Department of Software Development and Digital Innovation" ,
           photo: require("../assets/Img MOI.png"), // Ensure this path is correct
-          mark: "Completed",
-        }
+          mark: "Present",
+        }, 
       ],
     };
   },
@@ -80,6 +83,8 @@ export default {
 <style scoped>
 .intro {
   color: #fff;
+  font-size: 1.2rem;
+  /* margin-bottom: 30px; */
 }
 
 /* Container Styling */
@@ -99,10 +104,11 @@ export default {
   list-style-type: none;
   position: relative;
   width: 3px;
-  margin: 0 auto;
+  margin: 50px auto;
   padding-top: 50px;
-  background: linear-gradient(to bottom, #06b6d4, #3b82f6); /* From cyan-500 to blue-500 */
-
+  background: linear-gradient(to bottom, #06b6d4, #3b82f6);
+  /* Add space between the line and the content */
+  margin-left: 50px; /* This ensures there's space on the left side */
 }
 
 .timeline ul li::after {
@@ -120,13 +126,15 @@ export default {
 
 .timeline ul li div {
   position: relative;
-  bottom: 0;
   width: 500px;
-  padding: 15px;
+  padding: 20px;
   background: #3f3f46;
   border-radius: 5px;
   border: 1px solid #71717a;
   color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Add margin to create space between the line and the content */
+  margin-left: 35px; /* Space between line and content */
 }
 
 .timeline ul li div::before {
@@ -138,18 +146,30 @@ export default {
   border-style: solid;
 }
 
-.timeline ul li:nth-child(odd) div {
-  left: 45px;
+/* Timeline Item Text Styling */
+.timeline .school-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 5px;
 }
 
-.timeline ul li:nth-child(even) div {
-  left: -560px;
+.timeline .timeline-year, .timeline .timeline-year1 {
+  font-size: 1rem;
+  font-weight: 500;
+  /* color: #b3b3b3; */
 }
 
-time {
-  /* display: block; */
-  font-size: 0.8rem;
-  font-weight: bold;
+.timeline .mark1 {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: whitesmoke;
+  margin-top: 10px;
+  background-color: #2ec4b6;
+  border-radius: 30px;
+  width: 40%;
+  padding: 4px;
 }
 
 /* Timeline Photo Styling */
@@ -200,4 +220,5 @@ time {
     width: calc(100vw - 91px);
   }
 }
+
 </style>
