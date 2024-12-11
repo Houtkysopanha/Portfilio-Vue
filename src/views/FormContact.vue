@@ -1,208 +1,282 @@
 <template>
-  <div>
-    <!-- Sticky Circular Button with Icon -->
-    <button class="contact-button" @click="openForm">
-      <i class="fas fa-envelope"></i>
-    </button>
+  <div class="chatbot">
+    <!-- Chatbot Icon -->
+    <div class="bot-icon" @click="toggleChat">
+      <div class="icon-inner">
+        <i class="fa fa-commenting" aria-hidden="true"></i>
+      </div>
+    </div>
 
-    <!-- Modal for Contact Form -->
-    <transition name="modal" @after-leave="afterLeave">
-      <div v-if="formVisible" class="contact-form-modal">
-        <h3 class="form-title">Contact Us</h3>
-        <form @submit.prevent="submitForm">
-          <div class="form-group">
-            <label for="username">Username:</label>
-            <input
-              class="input-field"
-              type="text"
-              id="username"
-              v-model="formData.username"
-              placeholder="Enter your username"
-              required
+    <!-- Chatbot Window -->
+    <div v-if="isChatOpen" class="chat-window">
+      <div class="chat-header">
+        <span class="close-icon" @click="toggleChat">
+          <i class="fa fa-window-close" aria-hidden="true"></i>
+        </span>
+        <h4>How can we help you?</h4>
+      </div>
+      <div class="chat-content">
+        <div class="messages">
+          <div
+            v-for="(msg, index) in messages"
+            :key="index"
+            :class="['message', msg.type]"
+          >
+            <img
+              v-if="msg.type === 'bot'"
+              class="avatar"
+              :src="avatarUrl"
+              alt="Bot Avatar"
             />
+            <div class="message-text">
+              <div v-if="msg.qrCode">
+                <img :src="msg.qrCode" alt="QR Code" />
+              </div>
+              <div style="color: black;" v-else>{{ msg.text }}</div>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input
-              class="input-field"
-              type="email"
-              id="email"
-              v-model="formData.email"
-              placeholder="Enter your email"
-              required
-            />
-          </div>
-          <div class="form-group">
-            <label for="message">Message:</label>
-            <textarea
-              class="input-field"
-              id="message"
-              v-model="formData.message"
-              placeholder="Type your message"
-              required
-            ></textarea>
-          </div>
-          <div class="form-actions">
-            <button class="submit-button" type="submit">Send</button>
-            <button class="close-button" type="button" @click="closeForm">Close</button>
-          </div>
+        </div>
+        <form @submit.prevent="sendMessage" class="chat-input">
+          <input
+            v-model="message"
+            type="text"
+            placeholder="Send a message..."
+            class="input-field"
+          />
+          <button type="submit" class="send-button">
+            <i class="fa fa-paper-plane" aria-hidden="true"></i>
+          </button>
         </form>
       </div>
-    </transition>
+    </div>
   </div>
 </template>
 
-  
 <script>
+import QRCode from "qrcode";
+
 export default {
-  name: "ContactForm",
   data() {
     return {
-      formVisible: false,
-      formData: {
-        username: '',
-        email: '',
-        message: '',
-      },
+      isChatOpen: false,
+      message: "",
+      messages: [],
+      avatarUrl:
+        "https://w7.pngwing.com/pngs/408/238/png-transparent-pink-and-blue-illustration-discord-computer-icons-logo-user-internet-bot-discord-icon-purple-angle-violet-thumbnail.png",
     };
   },
   methods: {
-    openForm() {
-      this.formVisible = true;
+    toggleChat() {
+      this.isChatOpen = !this.isChatOpen;
     },
-    closeForm() {
-      this.formVisible = false;
+    async sendMessage() {
+      const userMessage = this.message.trim();
+      if (!userMessage) return;
+
+      this.addMessage(userMessage, "user"); // Add user message
+
+      // Check for QR Code request
+      if (userMessage.toLowerCase().includes("qr")) {
+        const qrCode = await this.generateQRCode(userMessage);
+        this.addMessage(qrCode, "bot", true); // Add QR code as a bot message
+      } else {
+        const botReply = this.getBotReply(userMessage); // Get bot's reply
+        setTimeout(() => {
+          this.addMessage(botReply, "bot");
+        }, 500);
+      }
+
+      this.message = ""; // Clear input field
+      this.scrollToBottom();
     },
-    submitForm() {
-      console.log('Form submitted:', this.formData);
-      this.closeForm();
+    addMessage(textOrQrCode, type, isQrCode = false) {
+      const message = isQrCode
+        ? { qrCode: textOrQrCode, type }
+        : { text: textOrQrCode, type };
+      this.messages.push(message);
+      this.scrollToBottom(); // Ensure scrolling after new message
     },
-    afterLeave() {
-      this.formVisible = false;
+    async generateQRCode(text) {
+      try {
+        return await QRCode.toDataURL(text);
+      } catch (err) {
+        console.error("QR Code generation failed:", err);
+        return null;
+      }
+    },
+    getBotReply(userMessage) {
+      const lowerMessage = userMessage.toLowerCase();
+
+      // Keyword Matching
+      if (lowerMessage.includes("hello") || lowerMessage.includes("hi")) {
+        return "Hello! Welcome to my bot service. How can I assist you today?";
+      } else if (lowerMessage.includes("price") || lowerMessage.includes("cost")) {
+        return "Our services vary in price depending on your requirements. Can you specify the service you're interested in?";
+      } else if (lowerMessage.includes("support") || lowerMessage.includes("help")) {
+        return "Our support team is available 24/7 to assist you. Please let us know the issue you're facing.";
+      } else if (lowerMessage.includes("email")) {
+        return "Here is our email: houtkysopanha69@gmail.com.";
+      } else if (lowerMessage.includes("phone") || lowerMessage.includes("លេខទូរស័ព្ទ")) {
+        return "Here is our phone number: 099 654 752.";
+        } else if (lowerMessage.includes("telegram")) {
+        return "Here is Telegram, you can use either: 099 654 752/@houtkysopanha";
+      } else if (lowerMessage.includes("contact")) {
+        return "You can contact us via email, Telegram, phone, LinkedIn, or WhatsApp.";
+        } else if (lowerMessage.includes("linkedin")) {
+        return "Here is our LinkedIn profile: https://www.linkedin.com/in/hout-ky-sopanha-8597852ba/ ";
+        } else if (lowerMessage.includes("whatsapp")) {
+        return "Here is our WhatsApp number: +855 99 654 752.";
+        } else if (lowerMessage.includes("facebook")) {
+        return "Here myname facebookL: Hout Ky Sopanha";
+        } else if (lowerMessage.includes("instagram")) {
+        return "Here is my Instagram: houtkysopanha";
+      } else if (lowerMessage.includes("bye")) {
+        return "Goodbye! Feel free to chat with me again anytime.";
+      } else {
+        return "I'm here to help with your queries. Can you provide more details about what you're looking for?";
+      }
+    },
+    scrollToBottom() {
+      this.$nextTick(() => {
+        const messagesDiv = this.$el.querySelector(".messages");
+        if (messagesDiv) {
+          messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+      });
     },
   },
 };
 </script>
 
-  
 <style scoped>
-/* Circular Button */
-.contact-button {
-  z-index: 1000;
+/* Chatbot Icon */
+.bot-icon {
   position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background-color: #6d6875;
-  color: #fff;
-  border: none;
-  padding: 16px;
+  bottom: 15px;
+  left: 15px;
+  background: #3b4f69;
   border-radius: 50%;
-  cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 60px;
   height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.contact-button:hover {
-  background-color: #4a4750;
-  transform: scale(1.1);
-}
-
-.contact-button i {
-  font-size: 24px;
-}
-
-/* Contact Form Modal */
-.contact-form-modal {
-  position: fixed;
-  bottom: 100px;
-  left: 20px;
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  width: 300px;
-  animation: slideIn 0.3s ease-out;
-}
-
-.form-title {
-  font-size: 20px;
-  margin-bottom: 10px;
-  color: #333333;
-}
-
-/* Form Inputs */
-.form-group {
-  margin-bottom: 15px;
-}
-
-label {
-  display: block;
-  font-size: 14px;
-  margin-bottom: 5px;
-  color: #555555;
-}
-
-.input-field {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #dddddd;
-  border-radius: 6px;
-  font-size: 14px;
-  outline: none;
-  transition: border-color 0.3s ease;
-}
-
-.input-field:focus {
-  border-color: #6d6875;
-}
-
-/* Form Buttons */
-.form-actions {
-  display: flex;
-  justify-content: space-between;
-}
-
-.submit-button,
-.close-button {
-  padding: 10px 15px;
-  border: none;
-  border-radius: 6px;
   cursor: pointer;
-  font-size: 14px;
+  z-index: 1000;
 }
 
-.submit-button {
-  background-color: #6d6875;
+.icon-inner {
+  color: white;
+  font-size: 1.5rem;
+  margin: 17px;
+}
+
+/* Chat Window */
+.chat-window {
+  position: fixed;
+  bottom: 80px;
+  left: 15px;
+  width: 320px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.chat-header {
+  background: gray;
+  color: white;
+  padding: 10px;
+  /* display: flex; */
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px 10px 0 0;
+}
+
+.close-icon {
+  cursor: pointer;
+}
+
+.chat-content {
+  /* flex: 1; */
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.messages {
+  /* flex: 1; */
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.message.user {
+  justify-content: flex-end;
+}
+
+.message.bot {
+  justify-content: flex-start;
+}
+
+.message .avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.message-text {
+  background: #f1f1f1;
+  border-radius: 15px;
+  padding: 10px;
+  max-width: 70%;
+  color: black !important;
+}
+
+.message.user .message-text {
+  background: #4caf50;
   color: white;
 }
 
-.submit-button:hover {
-  background-color: #4a4750;
+/* Input Field */
+.chat-input {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid #ddd;
 }
 
-.close-button {
-  background-color: #dddddd;
-  color: #333333;
+.input-field {
+  /* flex: 1; */
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+  margin-right: 10px;
+  background: #f1f1f1;
+  color: black;
 }
 
-.close-button:hover {
-  background-color: #bbbbbb;
+.send-button {
+  background: #4caf50;
+  border-radius: 10px;
+  width: 50px;
+  color: white;
+  border: none;
+  /* padding: 10px;
+  border-radius: 50%; */
+  cursor: pointer;
 }
 
-/* Animation */
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.send-button:hover {
+  background: #45a049;
 }
 </style>

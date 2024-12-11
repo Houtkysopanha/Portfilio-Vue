@@ -141,3 +141,8 @@ export default {
   }
 };
 </script>
+<style >
+.bacground{
+    overflow-y: hidden;
+}
+</style>

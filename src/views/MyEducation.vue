@@ -4,10 +4,9 @@
       <div class="title text-center">
           <h1 style=" font-size: 2.5rem;
   font-weight: 700;
-  color: #38bdf8;" class=" text-4xl">
+  color: #38bdf8;" class=" text-4xl" data-aos="fade-up">
             &lt; /  Education &gt;
           </h1>
-          <p class="mt-2">Hello, This is my brief education.</p>
       </div>
       <div class="timelinw-exper">
           <section>

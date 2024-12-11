@@ -2,14 +2,15 @@
   <div class="main-aboutme bg-gradient">
     <div class="container">
       <div class="AboutMe mb-20   text-center"> 
-        <h1 style=" font-size: 2.5rem;
+        <h1 style=" font-size: 2.5rem; 
   font-weight: 700;
-  color: #38bdf8;"> &lt; / About Me &gt; </h1>
+  
+  color: #38bdf8;" data-aos="fade-up"> &lt; / About Me &gt; </h1>
       </div>
       <div class="contain">
         <div class="row row-cols-1 g-0 text-start">
           <div class="col-6 box1 col-md-4">
-            <div class="demo">
+            <div class="demo" data-aos="fade-up-right">
   <div class="box mb-2">
     <div class="hover-point"></div>
     <div class="hover-point"></div>
@@ -24,7 +25,7 @@
 </div>
     <p class="text-center">&#64;houtkysopanha</p>
           </div>
-          <div class="col-md-8 p-3">
+          <div class="col-md-8 p-3" data-aos="fade-up-left">
             <div class="content-text">
               <h4 class="text-4xl text-highlight mb-3">My BRIEF BACKGROUND</h4>
               <div class="skill mb-3">
@@ -81,7 +82,7 @@
           </div>
         </div>
       </div>
-          <FormContact />
+          <FormContact  />
       </div>
     </div>
 </template>
@@ -382,7 +383,7 @@ export default {
   }
 
   .box {
-    width: 100%;
+    width: 100% !important;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -397,8 +398,12 @@ export default {
     font-size: 1.5rem;
   }
 
-  .box {
-    width: 100% !important;
+  .box1 {
+    width: 100% ;
+    height: 50%;
+    justify-content: center;
+    align-items: center;
+    margin: auto !important;
   }
 }
 

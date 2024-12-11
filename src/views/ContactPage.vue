@@ -3,9 +3,9 @@
     <header class="mb-10">
       <h1 style=" font-size: 2.5rem;
   font-weight: 700;
-  color: #38bdf8;text-align: center;"> &lt; / GET IN TOUCH &gt; </h1>
+  color: #38bdf8;text-align: center;" data-aos="fade-up"> &lt; / GET IN TOUCH &gt; </h1>
     </header>
-    <div class="box">
+    <div class="box" data-aos="zoom-out-down">
       <div class="row g-0">
         <!-- Left Side (Image) -->
         <div class="col-md-6 col-sm-12 bg-box1">

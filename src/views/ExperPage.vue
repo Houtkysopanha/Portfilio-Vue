@@ -4,7 +4,7 @@
       <div class="title text-center" style="margin-top: 65px;">
         <h1 style=" font-size: 2.5rem;
   font-weight: 700;
-  color: #38bdf8;" class="text-4xl">&lt; / Experience &gt;</h1>
+  color: #38bdf8;" class="text-4xl" data-aos="fade-up">&lt; / Experience &gt;</h1>
       </div>
       <div class="content">
         <!-- Introduction Section -->

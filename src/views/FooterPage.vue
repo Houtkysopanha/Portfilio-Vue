@@ -32,12 +32,7 @@
             <li><i class="fa-solid fa-map-marker-alt"></i> Dangkor, Phnom Penh</li>
           </ul>
           <!-- Social Icons -->
-          <div class="social-icons">
-            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" aria-label="CodePen"><i class="fab fa-codepen"></i></a>
-          </div>
+         <ContactFoot />
         </div>
       </div>
     </div>
@@ -49,7 +44,9 @@
 </template>
 
 <script>
+import ContactFoot from './ContactFoot.vue';
 export default {
+  components: { ContactFoot },
   name: 'FooterPage',
 };
 </script>

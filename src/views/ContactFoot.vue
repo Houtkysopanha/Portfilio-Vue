@@ -1,0 +1,162 @@
+<template>
+        <div class="btn_wrap">
+        <span>Share</span>
+        <div class="container">
+            <a href="https://www.facebook.com/houtkyso.panha.9/" target="blank">
+                <i class="fa-brands fa-facebook" style="color: #18629a;"></i>
+            </a>
+            
+            <a href="https://www.instagram.com/houtkysopanha/" target="blank">
+                <i class="fa-brands fa-instagram" style="color: #c31d1d;"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/hout-ky-sopanha-8597852ba/" target="blank">
+                <i class="fa-brands fa-linkedin" style="color: #327bb3;"></i>
+            </a>
+            <a href="https://t.me/houtKysopanha" target="blank">
+                <i class="fa-brands fa-telegram" style="color: #74C0FC;"></i>
+            </a>
+        </div>
+    </div>
+
+
+<a href="https://dribbble.com/YancyMin" class="dr-url" target="_blank"><img class="dr" src="https://cdn.dribbble.com/assets/logo-footer-hd-a05db77841b4b27c0bf23ec1378e97c988190dfe7d26e32e1faea7269f9e001b.png" alt=""></a>
+</template>
+<script>
+export default{
+    name: "ContactFoot",
+}
+</script>
+<style scoped>
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 100vh;
+    background-color: #FEFEFE;
+}
+
+i {
+    opacity: 0;
+    font-size: 28px;
+    color: #1F1E1E;
+    will-change: transform;
+    -webkit-transform: scale(.1);
+            transform: scale(.1);
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.btn_wrap {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    width: 240px;
+    height: 50px;
+    background-color: #EEEEED;
+    border: none;
+    border-radius: 80px;
+    padding: 0 18px;
+    will-change: transform;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.btn_wrap:hover {
+    /* transition-delay: .4s; */
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1)
+}
+
+span {
+    position: absolute;
+    z-index: 99;
+    width: 240px;
+    height: 50px;
+    border-radius: 80px;
+        font-size: 20px;
+    text-align: center;
+    line-height: 56px;
+    letter-spacing: 2px;
+    color: #EEEEED;
+    background-color: #3b4f69;
+    padding: 0 18px;
+    -webkit-transition: all 1.2s ease;
+    transition: all 1.2s ease;
+}
+
+.container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 240px;
+    height: 64px;
+    border-radius: 80px;
+}
+
+.container i:nth-of-type(1) {
+            -webkit-transition-delay: 1.1s;
+                    transition-delay: 1.1s;
+}
+
+.container i:nth-of-type(2) {
+            -webkit-transition-delay: .9s;
+                    transition-delay: .9s;
+}
+
+.container i:nth-of-type(3) {
+            -webkit-transition-delay: .7s;
+                    transition-delay: .7s;
+}
+
+.container i:nth-of-type(4) {
+            -webkit-transition-delay: .4s;
+                    transition-delay: .4s;
+}
+
+.btn_wrap:hover span {
+    -webkit-transition-delay: .25s;
+            transition-delay: .25s;
+    -webkit-transform: translateX(-280px);
+            transform: translateX(-280px)
+}
+
+.btn_wrap:hover i {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+}
+
+
+.dr {
+position: absolute;
+  bottom: 16px; 
+  right: 16px;
+  width:100px;
+}
+</style>
