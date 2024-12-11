@@ -1,57 +1,22 @@
 <template>
   <div class="container">
     <div class="content">
-      <div class="icon-container">
-        <!-- Facebook Icon -->
-        <div class="icon icon-fill">
-          <a
-            href="https://www.facebook.com/campaign/landing.php?campaign_id=1635645242"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="fa-brands fa-facebook"></i>
-          </a>
-        </div>
-
-        <!-- Instagram Icon -->
-        <div class="icon icon-enter">
-          <a
-            href="https://www.instagram.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-        </div>
-
-        <!-- WhatsApp Icon -->
-        <div class="icon icon-collapse">
-          <a
-            href="https://www.whatsapp.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="fa-brands fa-whatsapp"></i>
-          </a>
-        </div>
-
-        <!-- LinkedIn Icon -->
-        <div class="icon icon-collapse">
-          <a
-            href="https://www.linkedin.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="fa-brands fa-linkedin"></i>
-          </a>
-        </div>
-
-        <!-- Phone Icon -->
-        <div class="icon icon-rotate">
-          <a href="tel:+1234567890">
-            <i class="fa fa-phone"></i>
-          </a>
-        </div>
+      <div class="social-btns">
+        <a class="btn facebook" href="https://www.facebook.com/houtkyso.panha.9/" target="_blank">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a class="btn linkedin" href="https://www.linkedin.com/in/hout-ky-sopanha-8597852ba/" target="_blank">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a class="btn phone" href="tel: +855 99 654 752">
+          <i class="fa-solid fa-phone"></i>
+        </a>
+        <a class="btn instagram" href="https://www.instagram.com/houtkysopanha/" target="_blank">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a class="btn whatsapp" href="https://wa.me/099654752" target="_blank">
+          <i class="fa-brands fa-square-whatsapp"></i>
+        </a>
       </div>
     </div>
   </div>
@@ -64,155 +29,140 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@use "sass:math";
-
-// Variables
-$icon-size: 50px;
-$border-radius: 0.5; // 50% border-radius for icons
-$background: #2d2c3e;
-$green: #16a085;
-$red: #c82647;
-$orange: #eb9532;
-$purple: #7e3661;
-$white: #ffffff;
-
-// General Styles
-body {
-  background: $background;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow: hidden;
-}
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
 
 .container {
-  display: table;
-  height: auto;
-  width: 90%;
-  padding-bottom: 5vh;
-  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
 .content {
-  text-align: center;
-}
-
-// Icon Container Styles
-.icon-container {
-  margin: 30px;
   width: 100%;
-  height: $icon-size;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-.icon {
-  cursor: pointer;
-  position: relative;
-  display: inline-block;
-  width: $icon-size;
-  height: $icon-size;
-  margin: math.div($icon-size, 5);
-  border-radius: math.div($icon-size * $border-radius, 1);
+.social-btns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-btns .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 24px;
+  background-color: #fff;
+  color: #282c34;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+}
 
-  & a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    text-decoration: none;
-    color: inherit;
+.social-btns .btn i {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.social-btns .btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border-radius: 50%;
+  z-index: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.social-btns .btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.social-btns .btn:hover i {
+  transform: scale(1.2);
+}
+
+/* Custom button colors */
+.social-btns .btn.facebook {
+  background-color: #3b5998; /* Facebook blue */
+  color: #fff;
+}
+
+.social-btns .btn.facebook:hover::before {
+  background-color: #2d4373;
+}
+
+.social-btns .btn.linkedin {
+  background-color: #0077b5; /* LinkedIn blue */
+  color: #fff;
+}
+
+.social-btns .btn.linkedin:hover::before {
+  background-color: #005582;
+}
+
+.social-btns .btn.phone {
+  background-color: #34c759; /* Green for phone */
+  color: #fff;
+}
+
+.social-btns .btn.phone:hover::before {
+  background-color: #28a745;
+}
+
+.social-btns .btn.instagram {
+  background: linear-gradient(45deg, #fd5949, #d6249f, #285aeb);
+  color: #fff;
+}
+
+.social-btns .btn.instagram:hover::before {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.social-btns .btn.whatsapp {
+  background-color: #25d366; /* WhatsApp green */
+  color: #fff;
+}
+
+.social-btns .btn.whatsapp:hover::before {
+  background-color: #128c7e;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .social-btns {
+    gap: 10px;
   }
 
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    transition: all 0.25s ease;
-    border-radius: math.div($icon-size * $border-radius, 1);
-  }
-
-  i {
-    position: relative;
-    color: $white;
-    font-size: math.div($icon-size, 2);
-    transition: all 0.25s ease;
+  .social-btns .btn {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
   }
 }
 
-// Icon Modifiers
-.icon-fill {
-  &::before {
-    transition-duration: 0.5s;
-    box-shadow: inset 0 0 0 1px $green;
+@media (max-width: 480px) {
+  .social-btns {
+    gap: 8px;
   }
 
-  &:hover::before {
-    box-shadow: inset 0 0 0 $icon-size $green;
-  }
-}
-
-.icon-enter {
-  &::after {
-    box-shadow: inset 0 0 0 1px $orange;
-  }
-
-  &::before {
-    border-radius: 0;
-    margin-left: -100%;
-    box-shadow: inset 0 0 0 $icon-size $orange;
-  }
-
-  &:hover::before {
-    margin-left: 0;
-  }
-}
-
-.icon-collapse {
-  &::before {
-    border-radius: 0;
-  }
-
-  &:hover::before {
-    box-shadow: inset 0 math.div($icon-size, 2) 0 0 $green,
-      inset 0 math.div($icon-size, -2) 0 0 $green;
-  }
-
-  &::after {
-    box-shadow: inset 0 0 0 1px $green;
-  }
-}
-
-.icon-rotate {
-  box-shadow: inset 0 0 0 1px $purple;
-
-  &::after,
-  &::before {
-    border: 0px solid transparent;
-  }
-
-  &:hover::before {
-    transition: border-top-width 0.3s ease, border-top-color 0.3s ease;
-    border-width: $icon-size;
-    border-top-color: $purple;
-  }
-
-  &:hover::after {
-    transition: border-left-width 0.3s ease, border-left-color 0.3s ease;
-    border-width: $icon-size;
-    border-left-color: $purple;
-  }
-
-  &:hover {
-    transition: background 0.001s ease 0.3s;
-    background: $purple;
-  }
-
-  i {
-    z-index: 1;
+  .social-btns .btn {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
   }
 }
 </style>

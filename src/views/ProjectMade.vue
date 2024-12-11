@@ -3,13 +3,13 @@
     <div class="title text-center mb-10">
       <h4 style=" font-size: 2.5rem;
   font-weight: 700;
-  color: #38bdf8;" > &lt; / Project Made &gt; </h4>
+  color: #38bdf8;" data-aos="fade-up"> &lt; / Project Made &gt; </h4>
     </div>
     <div class="list-project text-center">
       <div class="row">
         <div class="col">
           <div class="p-3">
-            <div class="card__group">
+            <div class="card__group" data-aos="zoom-in-up">
               <div class="card" v-for="(card, index) in cards" :key="index">
                 <div class="card__image">
                   <img :src="card.imgSrc" :alt="card.alt" />

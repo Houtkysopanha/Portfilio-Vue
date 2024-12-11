@@ -2,7 +2,7 @@
 
   <div class="logo p-1 text-center d-flex">
          <div class="name-logo text-end">
-          <a class="navbar-brand navbar-logo" href="#">  <span>P</span>orfilio | <span>P</span>anah |</a>
+          <a class="navbar-brand navbar-logo" href="#">  <span>P</span>orfolio | <span>P</span>anah |</a>
          </div>
          <div class="img-logo">
           <img style="width: 40px; margin: auto;" src="https://img.icons8.com/?size=100&id=CMVEhOBzk3Zp&format=png&color=000000" alt="">

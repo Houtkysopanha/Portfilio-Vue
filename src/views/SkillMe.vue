@@ -2,10 +2,10 @@
   <div class="main-skillme">
     <div class="container">
       <div class="subject text-center mb-10">
-        <h1 class="title">&lt; / Skills & Abilities &gt;</h1>
+        <h1 class="title" data-aos="fade-up">&lt; / Skills & Abilities &gt;</h1>
       </div>
       <div class="content-skill">
-        <div class="grid">
+        <div class="grid" data-aos="fade-up">
           <div class="skill-card" v-for="skill in skills" :key="skill.name">
             <div class="logo">
               <img :src="skill.icon" :alt="skill.name" />

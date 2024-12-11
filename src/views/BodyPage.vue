@@ -7,30 +7,30 @@
             <div class="con-1">
               <div class="content">
                 <h3 class="text-4xl font-bold" data-aos="fade-down">&lt;/ Hi, I'm PANHA &gt;</h3>
-                <h2 class="text-5xl leading-tight font-bold">NICE TO MEET YOU!!</h2>
+                <h2 class="text-5xl leading-tight font-bold" data-aos="fade-down">NICE TO MEET YOU!!</h2>
                 <div class="typewriter">
-              <h2 id="typewriter-text" class="typewriter-text gradient-text">
+              <h2 id="typewriter-text" data-aos="fade-down" class="typewriter-text gradient-text">
                  {{ displayedText }}
               </h2>
               </div>
 
-                <p class="description">
+                <p class="description" data-aos="fade-down">
                   I am good at building Web Applications and Websites. <br />
                   I am very passionate about improving my coding skills & developing applications.
                 </p>
-                <div class="btn-contact"><BtnContact /></div>
-                <div class="btn-social"><BtnSocial /></div>
+                <div class="btn-contact" data-aos="fade-right"><BtnContact /></div>
+                <div class="btn-social" data-aos="fade-right"><BtnSocial /></div>
               </div>
               <div class="scrolldown">
-                <p>Please Scroll Down to see more</p>
-                <i class="fa-solid fa-circle-chevron-down animated-arrow"></i>
+                <p data-aos="fade-up">Please Scroll Down to see more</p>
+                <i  data-aos="fade-up" class="fa-solid fa-circle-chevron-down animated-arrow"></i>
               </div>
               <ScrollTop />
             </div>
           </div>
           <div class="col-md-6">
-            <div class="con2">
-              <img src="../assets/Avata.png" alt="Avatar" class="avatar-img" />
+            <div class="con2  image-container" data-aos="fade-left">
+              <img src="../assets/myprofile1.png" alt="Avatar" class="avatar-img" />
             </div>
           </div>
         </div>
