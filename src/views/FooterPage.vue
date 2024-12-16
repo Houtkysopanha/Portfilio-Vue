@@ -32,7 +32,7 @@
             <li><i class="fa-solid fa-map-marker-alt"></i> Dangkor, Phnom Penh</li>
           </ul>
           <!-- Social Icons -->
-         <ContactFoot />
+         <BtnSocial />
         </div>
       </div>
     </div>
@@ -44,9 +44,13 @@
 </template>
 
 <script>
-import ContactFoot from './ContactFoot.vue';
+import BtnSocial from './BtnSocial.vue';
+// import ContactFoot from './ContactFoot.vue';
 export default {
-  components: { ContactFoot },
+  components: { 
+    // ContactFoot,
+     BtnSocial 
+  },
   name: 'FooterPage',
 };
 </script>

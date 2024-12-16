@@ -55,7 +55,7 @@
                       <span class="ml-2">: 18</span>
                     </i>
                     <i class="fa-brands fa-google-scholar text-primary">
-                      <span class="ml-2">: Bachelor | Present</span>
+                      <span style="font-weight: bold;" class="ml-2">: Bachelor | Present</span>
                     </i>
                   </div>
                 </div>
@@ -110,6 +110,7 @@ export default {
   background: linear-gradient(135deg, #2e3b4e, #3b4f69);
   color: #fff;
   padding: 5em 0;
+  width: 100%;
 }
 
 .card {

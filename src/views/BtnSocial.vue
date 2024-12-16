@@ -1,24 +1,17 @@
 <template>
   <div class="container">
-    <div class="content">
-      <div class="social-btns">
-        <a class="btn facebook" href="https://www.facebook.com/houtkyso.panha.9/" target="_blank">
-          <i class="fa-brands fa-facebook"></i>
-        </a>
-        <a class="btn linkedin" href="https://www.linkedin.com/in/hout-ky-sopanha-8597852ba/" target="_blank">
-          <i class="fa-brands fa-linkedin"></i>
-        </a>
-        <a class="btn phone" href="tel: +855 99 654 752">
-          <i class="fa-solid fa-phone"></i>
-        </a>
-        <a class="btn instagram" href="https://www.instagram.com/houtkysopanha/" target="_blank">
-          <i class="fa-brands fa-instagram"></i>
-        </a>
-        <a class="btn whatsapp" href="https://wa.me/099654752" target="_blank">
-          <i class="fa-brands fa-square-whatsapp"></i>
-        </a>
-      </div>
-    </div>
+
+    <div id="social-platforms" style="display: flex;">
+
+<a class="btn btn-icon btn-facebook" href="https://www.facebook.com/houtkyso.panha.9/" target="_blank"> <i class="fa-brands fa-facebook"></i><span>Facebook</span></a>
+<a class="btn btn-icon btn-twitter" href="https://www.linkedin.com/in/hout-ky-sopanha-8597852ba/" target="_blank"> <i class="fa-brands fa-linkedin"></i><span>LinkedIn</span></a>
+<a class="btn btn-icon btn-googleplus" href="tel: +855 99 654 752" target="_blank"><i class="fa-solid fa-phone"></i><span>Call</span></a>
+<a class="btn btn-icon btn-pinterest" href="https://www.instagram.com/houtkysopanha/" target="_blank"><i class="fa-brands fa-instagram"></i><span>instagram</span></a>
+<a class="btn btn-icon btn-linkedin" href="https://wa.me/099654752" target="_blank"><i class="fa-brands fa-square-whatsapp"></i><span>Whatsapp</span></a>
+</div>
+
+
+
   </div>
 </template>
 
@@ -29,140 +22,157 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
 
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
+
+
+.btn {
+  clear:both;
+  white-space:nowrap;
+  font-size:.4em;
+  display:flex;
+  border-radius:5px;
+  // box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.35);
+  // margin:2px;
+  -webkit-transition:all .5s;
+  -moz-transition:all .5s;
+  transition:all .5s;
+  // overflow:hidden
 }
 
-.content {
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
+.btn:hover {
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.45);
 }
 
-.social-btns {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
+.btn:focus {
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.4);
 }
 
-.social-btns .btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  font-size: 24px;
-  background-color: #fff;
-  color: #282c34;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  position: relative;
-  transition: all 0.3s ease;
+.btn > span,.btn-icon > i {
+  float:left;
+  padding:13px;
+  -webkit-transition:all .5s;
+  -moz-transition:all .5s;
+  transition:all .5s;
+  line-height:1em
 }
 
-.social-btns .btn i {
-  position: relative;
-  z-index: 1;
-  transition: transform 0.3s ease;
+.btn > span {
+  padding:14px 18px 16px;
+  white-space:nowrap;
+  color:#FFF;
+  background:#b8b8b8
 }
 
-.social-btns .btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-  border-radius: 50%;
-  z-index: 0;
-  transition: all 0.3s ease-in-out;
+.btn:focus > span {
+  background:#9a9a9a
 }
 
-.social-btns .btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+.btn-icon > i {
+  border-radius:5px 0 0 5px;
+  position:relative;
+  width:13px;
+  text-align:center;
+  font-size:1.25em;
+  color:#fff;
+  background:#212121
 }
 
-.social-btns .btn:hover i {
-  transform: scale(1.2);
+.btn-icon > i:after {
+  content:"";
+  border:8px solid;
+  border-color:transparent transparent transparent #222;
+  position:absolute;
+  top:13px;
+  right:-15px
 }
 
-/* Custom button colors */
-.social-btns .btn.facebook {
-  background-color: #3b5998; /* Facebook blue */
-  color: #fff;
+.btn-icon:hover > i,.btn-icon:focus > i {
+  color:#FFF
 }
 
-.social-btns .btn.facebook:hover::before {
-  background-color: #2d4373;
+.btn-icon > span {
+  border-radius:0 5px 5px 0
 }
 
-.social-btns .btn.linkedin {
-  background-color: #0077b5; /* LinkedIn blue */
-  color: #fff;
+/*Facebook*/
+.btn-facebook:hover > i,.btn-facebook:focus > i {
+  color:#3b5998
 }
 
-.social-btns .btn.linkedin:hover::before {
-  background-color: #005582;
+.btn-facebook > span {
+  background:#3b5998
 }
 
-.social-btns .btn.phone {
-  background-color: #34c759; /* Green for phone */
-  color: #fff;
+/*Twitter*/
+.btn-twitter:hover > i,.btn-twitter:focus > i {
+  color:#55acee
 }
 
-.social-btns .btn.phone:hover::before {
-  background-color: #28a745;
+.btn-twitter > span {
+  background:#55acee
 }
 
-.social-btns .btn.instagram {
-  background: linear-gradient(45deg, #fd5949, #d6249f, #285aeb);
-  color: #fff;
+/*Google*/
+.btn-googleplus:hover > i,.btn-googleplus:focus > i {
+  color:#dd4b39
 }
 
-.social-btns .btn.instagram:hover::before {
-  background-color: rgba(0, 0, 0, 0.2);
+.btn-googleplus > span {
+  background:#dd4b39
 }
 
-.social-btns .btn.whatsapp {
-  background-color: #25d366; /* WhatsApp green */
-  color: #fff;
+/*Pinterest*/
+.btn-pinterest:hover > i,.btn-pinterest:focus > i {
+  color:#cb2028
 }
 
-.social-btns .btn.whatsapp:hover::before {
-  background-color: #128c7e;
+.btn-pinterest > span {
+  background:#cb2028
 }
 
-/* Responsive Design */
+/*LinkedIn*/
+.btn-linkedin:hover > i,.btn-linkedin:focus > i {
+  color:#007bb6
+}
+
+.btn-linkedin > span {
+  background:#007bb6
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
-  .social-btns {
-    gap: 10px;
+  #social-platforms {
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: start; /* Center buttons */
   }
 
-  .social-btns .btn {
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
+  .btn {
+    width: 30%; /* Full-width buttons */
+    justify-content: start;
+    align-items: start; /* Center align text/icon */
+  }
+
+  .btn > span {
+    font-size: 0.9em; /* Slightly smaller font */
+    padding: 10px 12px;
+  }
+
+  .btn-icon > i {
+    font-size: 1em; /* Reduce icon size */
   }
 }
 
-@media (max-width: 480px) {
-  .social-btns {
-    gap: 8px;
+@media (max-width: 468px) {
+  .btn {
+    font-size: 0.8em; /* Reduce button text size */
   }
 
-  .social-btns .btn {
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
+  .btn > span {
+    padding: 8px 10px;
+  }
+
+  .btn-icon > i {
+    font-size: 0.9em;
   }
 }
 </style>

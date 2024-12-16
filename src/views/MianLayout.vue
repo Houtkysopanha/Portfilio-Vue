@@ -1,7 +1,8 @@
 <template>
-    <div  class=" all-container  bg-black grid-background ">
+    <div  class="all-container  bg-black grid-background ">
         <backgroundBox />
-        <div class="wrapper">
+        <div class="scroll-horizental">
+            <div class="wrapper">
             <HeaderBar />
             <div class="main-content">
                 <div class="body1 mb-20">
@@ -46,6 +47,8 @@
             </div>
         </div>
         </div>
+        
+        </div>
 </template>
 <script setup>
 import AOS from 'aos';
@@ -89,6 +92,10 @@ export default {
     width: 100%;
     height: auto;
     background: black;
+}
+.scroll-horizental{
+    overflow-y: auto !important; 
+    overflow-x: hidden !important; 
 }
 .grid-background {
     background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);

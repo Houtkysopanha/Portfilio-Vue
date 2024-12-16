@@ -2,7 +2,7 @@
   <div class="main-body">
     <ScrollPanel style="width: 100%; height: auto">
       <div class="container">
-        <div class="row row-cols-1 g-0">
+        <div class="row row-cols-1 g-0" style="margin-top: 140px;">
           <div class="col-md-6">
             <div class="con-1">
               <div class="content">
@@ -18,8 +18,8 @@
                   I am good at building Web Applications and Websites. <br />
                   I am very passionate about improving my coding skills & developing applications.
                 </p>
-                <div class="btn-contact" data-aos="fade-right"><BtnContact /></div>
-                <div class="btn-social" data-aos="fade-right"><BtnSocial /></div>
+                <!-- <div class="btn-contact" data-aos="fade-right"><BtnContact /></div> -->
+                <div> <ContactFoot /> </div>
               </div>
               <div class="scrolldown">
                 <p data-aos="fade-up">Please Scroll Down to see more</p>
@@ -41,15 +41,16 @@
 
 <script>
 
-import BtnContact from "./BtnContact.vue";
-import BtnSocial from "./BtnSocial.vue";
+// import BtnContact from "./BtnContact.vue";
+// import BtnSocial from "./BtnSocial.vue";
 import ScrollTop from "primevue/scrolltop";
+import ContactFoot from './ContactFoot.vue';
 
 export default {
   components: {
-    BtnContact,
-    BtnSocial,
+    // BtnContact,
     ScrollTop,
+    ContactFoot,
   },
   name: "BodyPage",
   data() {
@@ -106,9 +107,9 @@ methods: {
 
 <style scoped>
 .main-body {
-  width: 100%;
   padding: 0;
   margin: 0;
+  width: 100%;
 }
 
 .container {
