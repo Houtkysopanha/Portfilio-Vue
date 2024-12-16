@@ -1,132 +1,155 @@
 <template>
-
-  <div class="logo p-1 text-center d-flex">
-         <div class="name-logo text-end">
-          <a class="navbar-brand navbar-logo" href="#">  <span>P</span>orfolio | <span>P</span>anah |</a>
-         </div>
-         <div class="img-logo">
-          <img style="width: 40px; margin: auto;" src="https://img.icons8.com/?size=100&id=CMVEhOBzk3Zp&format=png&color=000000" alt="">
-
-         </div>
-        </div>
-  <div class="main-header">
-    <!-- <div class="logo text-center d-flex">
-          <a class="navbar-brand navbar-logo" href="#">Panha|</a>
-          <img style="width: 20px; margin: auto;" src="https://img.icons8.com/?size=100&id=CMVEhOBzk3Zp&format=png&color=000000" alt="">
-        </div> -->
-
-    <div class="container" style="max-width: 100%;">
-      <nav class="navbar navbar-expand-custom navbar-mainbg">
-        <!-- Hamburger button, only visible on small screens -->
-        <div class="nav-right">
-          <button class="navbar-toggler" v-show="windowWidth < 768" @click="toggleNavbar" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <div class="main-all">
+    <!-- <div class="logo p-1 text-center d-flex">
+      <div class="name-logo text-end">
+        <a class="navbar-brand navbar-logo" href="#">
+          <span>P</span>orfolio | <span>P</span>anah |
+        </a>
+      </div>
+      <div class="img-logo">
+        <img
+          style="width: 40px; margin: auto;"
+          src="https://img.icons8.com/?size=100&id=CMVEhOBzk3Zp&format=png&color=000000"
+          alt=""
+        />
+      </div>
+    </div> -->
+    <div class="main-header">
+      <div class="logo p-1 text-center d-flex">
+      <div class="name-logo text-end">
+        <a class="navbar-brand navbar-logo" href="#">
+          <span>P</span>orfolio | <span>P</span>anah |
+        </a>
+      </div>
+      <div class="img-logo">
+        <img
+          style="width: 40px; margin: auto;"
+          src="https://img.icons8.com/?size=100&id=CMVEhOBzk3Zp&format=png&color=000000"
+          alt=""
+        />
+      </div>
+    </div>
+      <div class="container" style="max-width: 100%;">
+        <nav class="navbar navbar-expand-custom navbar-mainbg">
+          <!-- Hamburger button, only visible on small screens -->
+          <button
+            class="navbar-toggler"
+            v-show="windowWidth < 768"
+            @click="toggleNavbar"
+            type="button"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
             <i class="fas fa-bars text-white"></i>
           </button>
 
-          <!-- Navbar Links, hidden initially on small screens -->
-          <div :class="{'collapse': !isNavbarOpen && windowWidth < 768, 'navbar-collapse': true}" id="navbarSupportedContent">
+          <!-- Navbar Links -->
+          <div
+            :class="{
+              collapse: !isNavbarOpen && windowWidth < 768,
+              'navbar-collapse': true,
+            }"
+            id="navbarSupportedContent"
+          >
             <ul class="navbar-nav ml-auto">
-              <div class="hori-selector" :style="horiSelectorStyle"><div class="left"></div><div class="right"></div></div>
+              <div class="hori-selector" :style="horiSelectorStyle">
+                <div class="left"></div>
+                <div class="right"></div>
+              </div>
               <li
-  class="nav-item"
-  v-for="(item, index) in menuItems"
-  :key="index"
-  :class="{ active: activeIndex === index }"
-  @click="setActive(index, $event)"
->
-  <a class="nav-link" :href="item.href">
-    <i :class="item.icon"></i> {{ item.name }}
-  </a>
-</li>
+                class="nav-item"
+                v-for="(item, index) in menuItems"
+                :key="index"
+                :class="{ active: activeIndex === index }"
+                @click="setActive(index, $event)"
+              >
+                <a class="nav-link" :href="item.href">
+                  <i :class="item.icon"></i> {{ item.name }}
+                </a>
+              </li>
             </ul>
           </div>
-        </div>
-      </nav>
+        </nav>
+      </div>
     </div>
   </div>
 </template>
 
-
 <script>
 export default {
-  name: 'HeaderBar',
+  name: "HeaderBar",
   data() {
-  return {
-    menuItems: [
-      { name: 'HOME', icon: 'fas fa-house', href: '#home' },
-      { name: 'ABOUTME', icon: 'fas fa-address-card', href: '#aboutme' },
-      { name: 'SKILLS', icon: 'fas fa-laptop-code', href: '#skills' },
-      { name: 'EDUCATION', icon: 'fas fa-graduation-cap', href: '#education' },
-      { name: 'WORK', icon: 'fas fa-check-to-slot', href: '#work' },
-      { name: 'EXPERIENCE', icon: 'fas fa-briefcase', href: '#experience' },
-    ],
-    activeIndex: 0,
-    isNavbarOpen: false,
-    horiSelectorStyle: {
-      top: '0px',
-      left: '0px',
-      height: '0px',
-      width: '0px'
-    }
-  };
-},
-
+    return {
+      menuItems: [
+        { name: "HOME", icon: "fas fa-house", href: "#home" },
+        { name: "ABOUT ME", icon: "fas fa-address-card", href: "#aboutme" },
+        { name: "SKILLS", icon: "fas fa-laptop-code", href: "#skills" },
+        { name: "EDUCATION", icon: "fas fa-graduation-cap", href: "#education" },
+        { name: "WORK", icon: "fas fa-check-to-slot", href: "#work" },
+        { name: "EXPERIENCE", icon: "fas fa-briefcase", href: "#experience" },
+      ],
+      activeIndex: 0,
+      isNavbarOpen: false,
+      windowWidth: window.innerWidth,
+      horiSelectorStyle: {
+        top: "0px",
+        left: "0px",
+        height: "0px",
+        width: "0px",
+      },
+    };
+  },
   methods: {
     toggleNavbar() {
       this.isNavbarOpen = !this.isNavbarOpen;
-      this.updateHoriSelector();
     },
     setActive(index, event) {
-    this.activeIndex = index;
-    this.updateHoriSelector(event.target.closest('li'));
-  },
-  updateHoriSelector(activeItem) {
-    if (activeItem) {
-      const { offsetTop, offsetLeft, offsetHeight, offsetWidth } = activeItem;
-      this.horiSelectorStyle = {
-        top: `${offsetTop}px`,
-        left: `${offsetLeft}px`,
-        height: `${offsetHeight}px`,
-        width: `${offsetWidth}px`,
-        borderRadius: '15px',
-      };
-    }
-  },
+      this.activeIndex = index;
+      this.updateHoriSelector(event.target.closest("li"));
+    },
+    updateHoriSelector(activeItem) {
+      if (activeItem) {
+        const { offsetTop, offsetLeft, offsetHeight, offsetWidth } = activeItem;
+        this.horiSelectorStyle = {
+          top: `${offsetTop}px`,
+          left: `${offsetLeft}px`,
+          height: `${offsetHeight}px`,
+          width: `${offsetWidth}px`,
+          borderRadius: "15px",
+        };
+      }
+    },
     updateWindowWidth() {
       this.windowWidth = window.innerWidth;
-      if (this.windowWidth >= 768) {
-        this.isNavbarOpen = true; // Show navbar on larger screens
-      } else {
-        this.isNavbarOpen = false; // Hide navbar on smaller screens
-      }
-    }
+    },
   },
   mounted() {
-    this.updateHoriSelector();
     this.updateWindowWidth();
-    window.addEventListener('resize', this.updateWindowWidth);
-    window.addEventListener('scroll', this.detectActiveSection);
+    window.addEventListener("resize", this.updateWindowWidth);
   },
   beforeUnmount() {
-    window.removeEventListener('resize', this.updateWindowWidth);
-    window.removeEventListener('scroll', this.detectActiveSection);
-  }
+    window.removeEventListener("resize", this.updateWindowWidth);
+  },
 };
 </script>
 
 <style scoped>
+/* Main header styles */
 .main-header {
   background-color: #18181b;
+  width: 100%;
+  position: fixed;
+  /* top: 0;  */
+  z-index: 1000; 
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
 }
-.main-header  {
-  position: sticky; 
-  top: 0; /* Stick it to the top */
-  z-index: 1000; /* Ensure it's above other content */
-}
-.name-logo span{
+
+/* Logo section */
+.name-logo span {
   font-size: 30px;
 }
-.img-logo img{
+.img-logo img {
   position: absolute;
   margin: 0px;
   top: 10px;
@@ -137,12 +160,13 @@ export default {
   padding: 15px;
   color: #fff;
 }
+.logo{
+  border-bottom: 1px solid gray;
+}
+
+/* Navbar */
 .navbar-mainbg {
   background-color: #18181b;
-}
-#navbarSupportedContent {
-  overflow: hidden;
-  position: relative;
 }
 #navbarSupportedContent ul {
   padding: 0;
@@ -164,7 +188,6 @@ export default {
 #navbarSupportedContent > ul > li.active > a {
   color: whitesmoke;
   border-radius: 15px;
-  padding: 10px 20px;
   transition: all 0.7s;
 }
 .hori-selector {
@@ -175,27 +198,24 @@ export default {
   opacity: 10%;
   border-radius: 15px;
   transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  padding: 10px;
 }
 
-/* Hamburger button hidden by default, shown only on small screens */
+/* Hamburger button for small screens */
 .navbar-toggler {
   display: none;
 }
-
-/* Media query for small screens */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .navbar-toggler {
-    display: block; /* Show hamburger button on small screens */
+    display: block;
   }
   #navbarSupportedContent ul {
-    flex-direction: column; /* Stack links vertically on small screens */
+    flex-direction: column;
   }
   .navbar-collapse {
-    display: none; /* Hide navbar content initially on small screens */
+    display: none;
   }
   .navbar-collapse.collapse.show {
-    display: block; /* Show when toggled open */
+    display: block;
   }
-}
+} */
 </style>
