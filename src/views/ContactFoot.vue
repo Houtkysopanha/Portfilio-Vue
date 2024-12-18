@@ -24,13 +24,6 @@
       </a>
     </div>
   </div>
-
-  <a href="https://dribbble.com/YancyMin" class="dr-url" target="_blank"
-    ><img
-      class="dr"
-      src="https://cdn.dribbble.com/assets/logo-footer-hd-a05db77841b4b27c0bf23ec1378e97c988190dfe7d26e32e1faea7269f9e001b.png"
-      alt=""
-  /></a>
 </template>
 <script>
 export default {
@@ -78,8 +71,8 @@ i {
   cursor: pointer;
   width: 240px;
   height: 50px;
-  background-color: lightblue;
-  border: none;
+  background-color: whitesmoke;
+  /* border: 0.2px solid lightblue; */
   border-radius: 80px;
   padding: 0 18px;
   will-change: transform;
@@ -105,7 +98,7 @@ span {
   font-weight: bold;
   letter-spacing: 2px;
   color: whitesmoke;
-  background-color: lightslategray;
+  background-color: lightseagreen;
   padding: 0 18px;
   -webkit-transition: all 1.2s ease;
   transition: all 1.2s ease;

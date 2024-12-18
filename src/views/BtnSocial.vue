@@ -1,17 +1,20 @@
 <template>
   <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="rounded-social-buttons">
+  <a class="social-button facebook" href="https://www.facebook.com/houtkyso.panha.9/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+  |
+  <a class="social-button instagram" href="https://t.me/houtKysopanha" target="_blank"><i class="fab fa-telegram"></i></a>
+  |
+  <a class="social-button twitter" href="https://www.linkedin.com/in/hout-ky-sopanha-8597852ba/" target="_blank"><i class="fab fa-linkedin"></i></a>
+  |
+  <a class="social-button youtube" href="https://www.instagram.com/houtkysopanha/" target="_blank"><i class="fab fa-instagram"></i></a> 
+  
 
-    <div id="social-platforms" style="display: flex;">
-
-<a class="btn btn-icon btn-facebook" href="https://www.facebook.com/houtkyso.panha.9/" target="_blank"> <i class="fa-brands fa-facebook"></i><span>Facebook</span></a>
-<a class="btn btn-icon btn-twitter" href="https://www.linkedin.com/in/hout-ky-sopanha-8597852ba/" target="_blank"> <i class="fa-brands fa-linkedin"></i><span>LinkedIn</span></a>
-<a class="btn btn-icon btn-googleplus" href="tel: +855 99 654 752" target="_blank"><i class="fa-solid fa-phone"></i><span>Call</span></a>
-<a class="btn btn-icon btn-pinterest" href="https://www.instagram.com/houtkysopanha/" target="_blank"><i class="fa-brands fa-instagram"></i><span>instagram</span></a>
-<a class="btn btn-icon btn-linkedin" href="https://wa.me/099654752" target="_blank"><i class="fa-brands fa-square-whatsapp"></i><span>Whatsapp</span></a>
 </div>
-
-
-
+      </div>
+    </div>
   </div>
 </template>
 
@@ -22,157 +25,128 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
-
-
-.btn {
-  clear:both;
-  white-space:nowrap;
-  font-size:.4em;
-  display:flex;
-  border-radius:5px;
-  // box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.35);
-  // margin:2px;
-  -webkit-transition:all .5s;
-  -moz-transition:all .5s;
-  transition:all .5s;
-  // overflow:hidden
+textarea {
+  resize: none;
 }
 
-.btn:hover {
-  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.45);
+.text {
+  color: white;
+  font-size: 10px;
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  transform: translate(-30%, -30%);
+  -ms-transform: translate(-30%, -30%);
+  white-space: nowrap;
 }
 
-.btn:focus {
-  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.4);
+.svg-inline--fa {
+  vertical-align: -0.1em;
 }
 
-.btn > span,.btn-icon > i {
-  float:left;
-  padding:13px;
-  -webkit-transition:all .5s;
-  -moz-transition:all .5s;
-  transition:all .5s;
-  line-height:1em
+.rounded-social-buttons {
+  text-align: center;
 }
 
-.btn > span {
-  padding:14px 18px 16px;
-  white-space:nowrap;
-  color:#FFF;
-  background:#b8b8b8
+.rounded-social-buttons .social-button {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  width: 3rem;
+  height: 3.1rem;
+  border: 0.1rem solid transparent;
+  padding: 0;
+  text-decoration: none;
+  text-align: center;
+  color: #fefefe;
+  font-size: 1.5625rem;
+  font-weight: normal;
+  line-height: 2em;
+  border-radius: 1.6875rem;
+  transition: all 0.5s ease;
+  margin-right: 0.25rem;
+  margin-bottom: 0.25rem;
 }
 
-.btn:focus > span {
-  background:#9a9a9a
+.rounded-social-buttons .social-button:hover,
+.rounded-social-buttons .social-button:focus {
+  -webkit-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg);
 }
 
-.btn-icon > i {
-  border-radius:5px 0 0 5px;
-  position:relative;
-  width:13px;
-  text-align:center;
-  font-size:1.25em;
-  color:#fff;
-  background:#212121
+.rounded-social-buttons .fa-twitter,
+.fa-facebook-f,
+.fa-linkedin,
+.fa-youtube,
+.fa-instagram {
+  font-size: 25px;
 }
 
-.btn-icon > i:after {
-  content:"";
-  border:8px solid;
-  border-color:transparent transparent transparent #222;
-  position:absolute;
-  top:13px;
-  right:-15px
+.rounded-social-buttons .social-button.facebook {
+  background: #3b5998;
 }
 
-.btn-icon:hover > i,.btn-icon:focus > i {
-  color:#FFF
+.rounded-social-buttons .social-button.facebook:hover,
+.rounded-social-buttons .social-button.facebook:focus {
+  color: #3b5998;
+  background: #fefefe;
+  border-color: #3b5998;
 }
 
-.btn-icon > span {
-  border-radius:0 5px 5px 0
+.rounded-social-buttons .social-button.twitter {
+  background: #55acee;
 }
 
-/*Facebook*/
-.btn-facebook:hover > i,.btn-facebook:focus > i {
-  color:#3b5998
+.rounded-social-buttons .social-button.twitter:hover,
+.rounded-social-buttons .social-button.twitter:focus {
+  color: #55acee;
+  background: #fefefe;
+  border-color: #55acee;
 }
 
-.btn-facebook > span {
-  background:#3b5998
+.rounded-social-buttons .social-button.linkedin {
+  background: #007bb5;
 }
 
-/*Twitter*/
-.btn-twitter:hover > i,.btn-twitter:focus > i {
-  color:#55acee
+.rounded-social-buttons .social-button.linkedin:hover,
+.rounded-social-buttons .social-button.linkedin:focus {
+  color: #007bb5;
+  background: #fefefe;
+  border-color: #007bb5;
 }
 
-.btn-twitter > span {
-  background:#55acee
+.rounded-social-buttons .social-button.youtube {
+  background: #bb0000;
 }
 
-/*Google*/
-.btn-googleplus:hover > i,.btn-googleplus:focus > i {
-  color:#dd4b39
+.rounded-social-buttons .social-button.youtube:hover,
+.rounded-social-buttons .social-button.youtube:focus {
+  color: #bb0000;
+  background: #fefefe;
+  border-color: #bb0000;
 }
 
-.btn-googleplus > span {
-  background:#dd4b39
+.rounded-social-buttons .social-button.instagram {
+  background: #125688;
 }
 
-/*Pinterest*/
-.btn-pinterest:hover > i,.btn-pinterest:focus > i {
-  color:#cb2028
+.rounded-social-buttons .social-button.instagram:hover,
+.rounded-social-buttons .social-button.instagram:focus {
+  color: #125688;
+  background: #fefefe;
+  border-color: #125688;
 }
 
-.btn-pinterest > span {
-  background:#cb2028
+.rounded-social-buttons .social-button.rss {
+  background: #ee802f;
 }
 
-/*LinkedIn*/
-.btn-linkedin:hover > i,.btn-linkedin:focus > i {
-  color:#007bb6
+.rounded-social-buttons .social-button.rss:hover,
+.rounded-social-buttons .social-button.rss:focus {
+  color: #ee802f;
+  background: #fefefe;
+  border-color: #ee802f;
 }
 
-.btn-linkedin > span {
-  background:#007bb6
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-  #social-platforms {
-    flex-direction: column; /* Stack buttons vertically */
-    align-items: start; /* Center buttons */
-  }
-
-  .btn {
-    width: 30%; /* Full-width buttons */
-    justify-content: start;
-    align-items: start; /* Center align text/icon */
-  }
-
-  .btn > span {
-    font-size: 0.9em; /* Slightly smaller font */
-    padding: 10px 12px;
-  }
-
-  .btn-icon > i {
-    font-size: 1em; /* Reduce icon size */
-  }
-}
-
-@media (max-width: 468px) {
-  .btn {
-    font-size: 0.8em; /* Reduce button text size */
-  }
-
-  .btn > span {
-    padding: 8px 10px;
-  }
-
-  .btn-icon > i {
-    font-size: 0.9em;
-  }
-}
 </style>

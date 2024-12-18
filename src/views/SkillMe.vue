@@ -2,7 +2,10 @@
   <div class="main-skillme">
     <div class="container">
       <div class="subject text-center mb-10">
-        <h1 class="title" data-aos="fade-up">&lt; / Skills & Abilities &gt;</h1>
+        <h1 style=" font-size: 2.5rem; 
+  font-weight: 700;
+  
+  color: #38bdf8;" data-aos="fade-up"> &lt; / <span style="border-bottom: 5px solid white;">Skill</span>&Abilitie &gt; </h1>
       </div>
       <div class="content-skill">
         <div class="grid" data-aos="fade-up">
@@ -38,7 +41,6 @@ export default {
         { name: "PrimeVue", icon: "https://img.icons8.com/?size=100&id=ixfybwBsCCEH&format=png", level: 45 },
         { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg", level: 50 },
         { name: "GitHub", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg", level: 50 },
-        { name: "NPM", icon: "https://img.icons8.com/?size=100&id=24895&format=png", level: 50 },
         { name: "Postman", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg", level: 50 },
         { name: "Vercel", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original-wordmark.svg", level: 50 },
       ],

@@ -19,7 +19,7 @@
                   I am very passionate about improving my coding skills & developing applications.
                 </p>
                 <!-- <div class="btn-contact" data-aos="fade-right"><BtnContact /></div> -->
-                <!-- <div> <ContactFoot /> </div> -->
+                <div> <ContactFoot /> </div>
               </div>
               <div class="scrolldown">
                 <p data-aos="fade-up">Please Scroll Down to see more</p>
@@ -44,13 +44,13 @@
 // import BtnContact from "./BtnContact.vue";
 // import BtnSocial from "./BtnSocial.vue";
 import ScrollTop from "primevue/scrolltop";
-// import ContactFoot from './ContactFoot.vue';
+import ContactFoot from './ContactFoot.vue';
 
 export default {
   components: {
     // BtnContact,
     ScrollTop,
-    // ContactFoot,
+    ContactFoot,
   },
   name: "BodyPage",
   data() {

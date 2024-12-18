@@ -2,9 +2,10 @@
   <div class="main-myeduc">
     <div class="container">
       <div class="title text-center" style="margin-top: 65px;">
-        <h1 style=" font-size: 2.5rem;
+        <h1 style=" font-size: 2.5rem; 
   font-weight: 700;
-  color: #38bdf8;" class="text-4xl" data-aos="fade-up">&lt; / Experience &gt;</h1>
+  
+  color: #38bdf8;" data-aos="fade-up"> &lt; / <span style="border-bottom: 5px solid white;">Exp</span>rience &gt; </h1>
       </div>
       <div class="content">
         <!-- Introduction Section -->
@@ -40,7 +41,7 @@ export default {
     return {
       timelineItems: [
         { 
-          school: "Ministy of Interior",
+          school: "Ministy of Interior | Internship",
           dec: "General Department of Digital Technology and Media", 
           dec1: "Work as a position Frontend Developer at Department of Software Development and Digital Innovation" ,
           photo: require("../assets/Img MOI.png"), // Ensure this path is correct

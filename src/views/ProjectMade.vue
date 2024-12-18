@@ -1,9 +1,10 @@
 <template>
   <div class="main-Project">
     <div class="title text-center mb-10">
-      <h4 style=" font-size: 2.5rem;
+      <h1 style=" font-size: 2.5rem; 
   font-weight: 700;
-  color: #38bdf8;" data-aos="fade-up"> &lt; / Project Made &gt; </h4>
+  
+  color: #38bdf8;" data-aos="fade-up"> &lt; / <span style="border-bottom: 5px solid white;">Pro</span>ject Made &gt; </h1>
     </div>
     <div class="list-project text-center">
       <div class="row">
