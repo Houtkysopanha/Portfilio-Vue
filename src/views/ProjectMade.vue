@@ -43,13 +43,13 @@ export default {
           description: "A service platform for doctors with booking and consultation features.",
           projectLink: "https://doctor-vue.vercel.app/"
         },
-        {
-          imgSrc: require('/src/assets/flower-shop.png'),
-          alt: "Flower Shop",
-          title: "Flower Shop",
-          description: "A modern online store for flowers and gifts.",
-          projectLink: "https://shop-flower-one.vercel.app/"
-        },
+        // {
+        //   imgSrc: require('/src/assets/flower-shop.png'),
+        //   alt: "Flower Shop",
+        //   title: "Flower Shop",
+        //   description: "A modern online store for flowers and gifts.",
+        //   projectLink: "https://shop-flower-one.vercel.app/"
+        // },
         {
           imgSrc: require('/src/assets/calculate.png'),
           alt: "Calculator",
