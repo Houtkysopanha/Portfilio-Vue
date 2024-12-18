@@ -1,9 +1,10 @@
 <template>
   <div class="main-contact" style="margin-top: 65px;">
-    <header class="mb-10">
-      <h1 style=" font-size: 2.5rem;
+    <header class="mb-10 text-center">
+      <h1 style=" font-size: 2.5rem; 
   font-weight: 700;
-  color: #38bdf8;text-align: center;" data-aos="fade-up"> &lt; / GET IN TOUCH &gt; </h1>
+  
+  color: #38bdf8;" data-aos="fade-up"> &lt; / <span style="border-bottom: 5px solid white;">Get</span>In Touch &gt; </h1>
     </header>
     <div class="box" data-aos="zoom-out-down">
       <div class="row g-0">

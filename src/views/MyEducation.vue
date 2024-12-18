@@ -2,11 +2,10 @@
 
   <div class="main-experience" style="margin-top: 65px; ">
       <div class="title text-center">
-          <h1 style=" font-size: 2.5rem;
+        <h1 style=" font-size: 2.5rem; 
   font-weight: 700;
-  color: #38bdf8;" class=" text-4xl" data-aos="fade-up">
-            &lt; /  Education &gt;
-          </h1>
+  
+  color: #38bdf8;" data-aos="fade-up"> &lt; / <span style="border-bottom: 5px solid white;">Edu</span>cation &gt; </h1>
       </div>
       <div class="timelinw-exper">
           <section>
@@ -40,7 +39,8 @@ export default{
   return {
     timelineItems: [
     { year: "2024-2028", heading: "ROYAL UNIVERSITY OF PHNOM PENH", description: "Batcerlor of Information Technology | Majoring | Computer Scient" },
-    { year: "Apr,06 - Jun,22 of 2024", heading: "INSTINCT INSTITUTE", description: "Frontend Developers | Short Course" },
+    { year: "Nov,02-03,2024", heading: "INSTINCT INSTITUTE", description: "Workshop | DevSecOps"},
+    { year: "Apr,06 - Jun,22,2024", heading: "INSTINCT INSTITUTE", description: "Frontend Developers | Short Course" },
     { year: "2020-2023", heading: "TAING KRASANG HIGHT SCHOOL", description: "Graduated from Grade 12 National Education Program" },
     { year: "2017-2019", heading: "TAING KRASANG HIGHT SCHOOL", description: "Graduated from Grade 9 National Education Program" },
     ],

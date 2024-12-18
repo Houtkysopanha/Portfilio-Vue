@@ -1,18 +1,25 @@
 <template>
   <footer class="main-footer">
     <div class="container text-center py-5">
-      <div class="row text-start row-cols-1 row-cols-lg-3 g-4">
+      <div class="row text-start row-cols-1 row-cols-lg-4 g-4">
         <!-- About Section -->
         <div class="col">
-          <h2 class="footer-title">Panha Portfolio</h2>
+          <h2 class="footer-title"> <span style="border-bottom: 3px solid white;">Pan</span>ha Portfolio</h2>
           <p class="footer-text">
             Thank you for visiting my personal portfolio website. Contact me via my social channels.
           </p>
         </div>
-        
+         <!-- About Section -->
+         <div class="col">
+          <h2 class="footer-title"> <span style="border-bottom: 3px solid white;">Pro</span>duct & Service</h2>
+          <ul class="footer-links">
+            <li>Websites</li>
+            <li>Web Application</li>
+          </ul>
+        </div>
         <!-- Quick Links Section -->
         <div class="col">
-          <h2 class="footer-title">Quick Links</h2>
+          <h2 class="footer-title"><span style="border-bottom: 3px solid white;">Qui</span>ck Links</h2>
           <ul class="footer-links">
             <li><a href="#" class="footer-link">Home</a></li>
             <li><a href="#" class="footer-link">About Me</a></li>
@@ -25,7 +32,7 @@
         
         <!-- Contact Info Section -->
         <div class="col">
-          <h2 class="footer-title">Contact Info</h2>
+          <h2 class="footer-title"><span style="border-bottom: 3px solid white;">Con</span>tact Info</h2>
           <ul class="contact-info">
             <li><i class="fa-solid fa-phone"></i> +855 99 654 752</li>
             <li><i class="fa-solid fa-envelope"></i> houtkysopanha69@gmail.com</li>

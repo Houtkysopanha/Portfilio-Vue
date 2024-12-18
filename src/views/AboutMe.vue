@@ -5,7 +5,7 @@
         <h1 style=" font-size: 2.5rem; 
   font-weight: 700;
   
-  color: #38bdf8;" data-aos="fade-up"> &lt; / About Me &gt; </h1>
+  color: #38bdf8;" data-aos="fade-up"> &lt; / <span style="border-bottom: 5px solid white;">Abo</span>ut Me &gt; </h1>
       </div>
       <div class="contain">
         <div class="row row-cols-1 g-0 text-start">
@@ -52,10 +52,10 @@
                   </div>
                   <div class="col">
                     <i class="fa-solid fa-calendar text-primary">
-                      <span class="ml-2">: 18</span>
+                      <span class="ml-2">: 18 years old</span>
                     </i>
                     <i class="fa-brands fa-google-scholar text-primary">
-                      <span style="font-weight: bold;" class="ml-2">: Bachelor | Present</span>
+                      <span style="font-weight: bold;" class="ml-2">: Bachelor IT | Present</span>
                     </i>
                   </div>
                 </div>
@@ -74,7 +74,7 @@
                 class="cv-button no-underline w-40 text-center bg-cyan-600 hover:bg-cyan-700"
                 as="a"
                 label="Detail Me"
-                href="/My CV.pdf"
+                href="/Hout Ky Sopanha-CV(v22).pdf"
                 target="_blank"
                 rel="noopener"
               />
