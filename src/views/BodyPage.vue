@@ -19,7 +19,9 @@
                   I am very passionate about improving my coding skills & developing applications.
                 </p>
                 <!-- <div class="btn-contact" data-aos="fade-right"><BtnContact /></div> -->
-                <div> <ContactFoot /> </div>
+                <div class=" mt-10"> 
+                  <ContactFoot /> 
+                </div>
               </div>
               <div class="scrolldown">
                 <p data-aos="fade-up">Please Scroll Down to see more</p>
