@@ -70,7 +70,9 @@
                   +855 99 654 752
                 </p>
               </div>
-              <Button
+              <div class="btn2 flex items-center space-x-4">
+               
+                  <Button
                 class="cv-button no-underline w-40 text-center bg-cyan-600 hover:bg-cyan-700"
                 as="a"
                 label="Detail Me"
@@ -78,6 +80,17 @@
                 target="_blank"
                 rel="noopener"
               />
+              <Button
+              style="background-color: lightblue; width: auto;"
+                class="cv-button no-underline w-40 text-center bg-cyan-600 hover:bg-cyan-700"
+                as="a"
+                label="My Certificates"
+                href="https://my-certificates-flax.vercel.app/"
+                target="_blank"
+                rel="noopener"
+              />
+             
+              </div>
             </div>
           </div>
         </div>
@@ -433,6 +446,11 @@ export default {
     justify-content: center;
     align-items: center;
     margin: auto !important;
+  }
+  .btn2 .cv-button{
+    font-size: 13px;
+    font-size: bold;
+    width: auto;
   }
 }
 </style>
