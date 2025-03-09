@@ -44,8 +44,15 @@ export default {
           school: "Ministy of Interior | Internship",
           dec: "General Department of Digital Technology and Media", 
           dec1: "Work as a position Frontend Developer at Department of Software Development and Digital Innovation" ,
-          photo: require("../assets/Img MOI.png"), // Ensure this path is correct
+          photo: require("../assets/Img MOI.png"), 
           mark: "Present",
+        }, 
+        { 
+          school: "EdTech Summit Cambodia | Volunteer",
+          dec: "Responsible in role Registration and Logistic.", 
+          dec1: "Instant Switching role with other volunteer if needed." ,
+          photo: require("../assets/EdTech.jpg"), 
+          mark: "Finished",
         }, 
       ],
     };
@@ -105,7 +112,7 @@ export default {
   list-style-type: none;
   position: relative;
   width: 3px;
-  margin: 50px auto;
+  /* margin: 50px auto; */
   padding-top: 50px;
   background: linear-gradient(to bottom, #06b6d4, #3b82f6);
   /* Add space between the line and the content */
