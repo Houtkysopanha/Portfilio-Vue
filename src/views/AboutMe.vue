@@ -73,7 +73,8 @@
               <div class="btn2 flex items-center space-x-4">
                
                   <Button
-                class="cv-button no-underline w-40 text-center bg-cyan-600 hover:bg-cyan-700"
+        
+                class="cv-button no-underline w-40 text-center text-black"
                 as="a"
                 label="Detail Me"
                 href="/Hout Ky Sopanha-CV(v22).pdf"
@@ -395,7 +396,6 @@ export default {
   .p-3 {
     padding: 1rem !important;
   }
-
   .box {
     width: 100% !important;
     display: flex;

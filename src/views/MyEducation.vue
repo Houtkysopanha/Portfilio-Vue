@@ -39,6 +39,7 @@ export default{
   return {
     timelineItems: [
     { year: "2024-2028", heading: "ROYAL UNIVERSITY OF PHNOM PENH", description: "Batcerlor of Information Technology | Majoring | Computer Scient" },
+    { year: "Feb 2024-Present", heading: "AUSTRALIAN CENTER FOR EDUCATION", description: "General English Program | GEP7A" },
     { year: "Nov,02-03,2024", heading: "INSTINCT INSTITUTE", description: "Workshop | DevSecOps"},
     { year: "Apr,06 - Jun,22,2024", heading: "INSTINCT INSTITUTE", description: "Frontend Developers | Short Course" },
     { year: "2020-2023", heading: "TAING KRASANG HIGHT SCHOOL", description: "Graduated from Grade 12 National Education Program" },
