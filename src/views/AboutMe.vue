@@ -77,7 +77,7 @@
                 class="cv-button no-underline w-40 text-center text-black"
                 as="a"
                 label="Detail Me"
-                href="/Hout Ky Sopanha-CV(v22).pdf"
+                href="/CV_Houtkysopanha.pdf"
                 target="_blank"
                 rel="noopener"
               />
