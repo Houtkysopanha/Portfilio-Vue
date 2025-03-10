@@ -37,12 +37,21 @@ export default {
   data() {
     return {
       cards: [
+      {
+          imgSrc: require('/src/assets/hms.png'),
+          alt: "HMS",
+          title: "HMS",
+          description: "Hosiptia Management System,Platform for using controlling in one hopital.",
+           projectLink: "https://hms-pro-dusky.vercel.app/"
+         
+        },
         {
           imgSrc: require('/src/assets/doctor.png'),
           alt: "Doctor Services",
           title: "Doctor Services",
           description: "A service platform for doctors with booking and consultation features.",
           projectLink: "https://doctor-vue.vercel.app/"
+
         },
         // {
         //   imgSrc: require('/src/assets/flower-shop.png'),
