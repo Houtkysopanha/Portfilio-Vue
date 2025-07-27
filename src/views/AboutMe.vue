@@ -1,12 +1,12 @@
 <template>
   <div class="main-aboutme bg-gradient">
     <div class="container">
-      <div class="AboutMe mb-20   text-center"> 
-        <h1 style=" font-size: 2.5rem; 
-  font-weight: 700;
-  
-  color: #38bdf8;" data-aos="fade-up"> &lt; / <span style="border-bottom: 5px solid white;">Abo</span>ut Me &gt; </h1>
-      </div>
+      <header class="mb-10 text-center">
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-indigo-400 tracking-tight leading-tight mb-4 animate-fade-in-down">
+        &lt; / <span class="border-b-4 border-indigo-300 pb-1">Abo</span>ut Me &gt;
+      </h1>
+      <p class="text-gray-400 text-lg sm:text-xl animate-fade-in-up">Let's connect and build something amazing.</p>
+    </header>
       <div class="contain">
         <div class="row row-cols-1 g-0 text-start">
           <div class="col-6 box1 col-md-4">
@@ -41,7 +41,7 @@
                 <div class="row row-cols-1 row-cols-lg-2 g-2">
                   <div class="col">
                     <i class="fa-solid fa-cake-candles text-primary">
-                      <span class="ml-3">: 02-03-2006</span>
+                      <span class="ml-3">: 2006</span>
                     </i>
                     <i class="fa-solid fa-location-dot text-primary">
                       <span class="ml-3">: Chamkar Daung, Phnom Penh</span>
@@ -52,10 +52,10 @@
                   </div>
                   <div class="col">
                     <i class="fa-solid fa-calendar text-primary">
-                      <span class="ml-2">: 18 years old</span>
+                      <span class="ml-2">: 19 years old</span>
                     </i>
                     <i class="fa-brands fa-google-scholar text-primary">
-                      <span style="font-weight: bold;" class="ml-2">: Bachelor IT | Present</span>
+                      <span style="font-weight: bold;" class="ml-2">: Bachelor Computer Science | Present</span>
                     </i>
                   </div>
                 </div>
@@ -70,28 +70,28 @@
                   +855 99 654 752
                 </p>
               </div>
-              <div class="btn2 flex items-center space-x-4">
-               
-                  <Button
-        
-                class="cv-button no-underline w-40 text-center text-black"
-                as="a"
-                label="Detail Me"
-                href="/CV_Houtkysopanha.pdf"
-                target="_blank"
-                rel="noopener"
-              />
-              <Button
-              style="background-color: lightblue; width: auto;"
-                class="cv-button no-underline w-40 text-center bg-cyan-600 hover:bg-cyan-700"
-                as="a"
-                label="My Certificates"
-                href="https://my-certificates-flax.vercel.app/"
-                target="_blank"
-                rel="noopener"
-              />
-             
-              </div>
+               <div class="action-buttons flex flex-wrap gap-4 justify-start">
+            <Button
+              class="action-button bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"
+              as="a"
+              label="Detail Me (CV)"
+              href="/My_CV.pdf"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="fa-solid fa-file-pdf mr-2"></i> Detail Me (CV)
+            </Button>
+            <Button
+              class="action-button bg-gradient-to-r from-cyan-500 to-teal-600 hover:from-cyan-600 hover:to-teal-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"
+              as="a"
+              label="My Certificates"
+              href="https://my-certificates-flax.vercel.app/"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="fa-solid fa-award mr-2"></i> My Certificates
+            </Button>
+          </div>
             </div>
           </div>
         </div>
@@ -185,16 +185,6 @@ export default {
   border: 1px solid #083344;
 }
 
-
-.aboutme-header h1 {
-  font-size: 3rem;
-  font-weight: bold;
-  color: #74C0FC;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 1.5rem;
-}
-
 .heading-title {
   text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -247,12 +237,6 @@ export default {
   padding: 2rem;
   border-radius: 10px;
   margin-top: 2rem;
-}
-
-.text-4xl {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #fff;
 }
 
 .text-highlight {
@@ -419,6 +403,48 @@ export default {
     align-items: center;
     margin: auto !important;
   }
+}
+/* Buttons (PrimeVue Button will override, but good for base styles) */
+.action-button {
+  display: inline-flex;
+  align-items: center;
+  width: 200px;
+  justify-content: center;
+  gap: 0.5rem; /* Space between icon and text */
+  padding: 0.9rem 2.5rem; /* Generous padding */
+  font-size: 1.05rem; /* Consistent font size */
+  font-weight: 700; /* Bolder text */
+  border-radius: 9999px; /* Fully rounded buttons */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); /* Softer initial shadow */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.action-button i {
+  font-size: 1.1em; /* Slightly larger icon */
+}
+
+/* Button specific gradients & shadows */
+/* Detail Me (CV) Button */
+.action-buttons .action-button:first-child {
+  background: linear-gradient(90deg, #3b82f6, #9333ea);
+  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+}
+.action-buttons .action-button:first-child:hover {
+  background: linear-gradient(90deg, #2563eb, #7e22ce);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.45);
+  transform: translateY(-3px) scale(1.02);
+}
+
+/* My Certificates Button */
+.action-buttons .action-button:last-child {
+  background: linear-gradient(90deg, #06b6d4, #14b8a6);
+  box-shadow: 0 5px 15px rgba(6, 182, 212, 0.3);
+}
+.action-buttons .action-button:last-child:hover {
+  background: linear-gradient(90deg, #0ea5e9, #0d9488);
+  box-shadow: 0 8px 25px rgba(6, 182, 212, 0.45);
+  transform: translateY(-3px) scale(1.02);
 }
 
 @media (max-width: 576px) {

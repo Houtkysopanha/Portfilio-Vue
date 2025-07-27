@@ -1,12 +1,12 @@
 <template>
   <div class="main-myeduc">
     <div class="container">
-      <div class="title text-center" style="margin-top: 65px;">
-        <h1 style=" font-size: 2.5rem; 
-  font-weight: 700;
-  
-  color: #38bdf8;" data-aos="fade-up"> &lt; / <span style="border-bottom: 5px solid white;">Exp</span>rience &gt; </h1>
-      </div>
+        <header class="mb-10 mt-20 text-center">
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-indigo-400 tracking-tight leading-tight  animate-fade-in-down">
+        &lt; / <span class="border-b-4 border-indigo-300 pb-1">My</span> Experience &gt;
+      </h1>
+      <!-- <p class="text-gray-400 text-lg sm:text-xl animate-fade-in-up">Let's connect and build something amazing.</p> -->
+    </header>
       <div class="content">
         <!-- Introduction Section -->
         <!-- <section class="intro">
