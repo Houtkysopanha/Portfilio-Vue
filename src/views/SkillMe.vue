@@ -1,12 +1,12 @@
 <template>
   <div class="main-skillme">
     <div class="container">
-      <div class="subject text-center mb-10">
-        <h1 style=" font-size: 2.5rem; 
-  font-weight: 700;
-  
-  color: #38bdf8;" data-aos="fade-up"> &lt; / <span style="border-bottom: 5px solid white;">Skill</span>&Abilitie &gt; </h1>
-      </div>
+        <header class="mb-10 text-center">
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-indigo-400 tracking-tight leading-tight mb-4 animate-fade-in-down">
+        &lt; / <span class="border-b-4 border-indigo-300 pb-1">Skil</span>ll & Ability &gt;
+      </h1>
+      <!-- <p class="text-gray-400 text-lg sm:text-xl animate-fade-in-up">Let's connect and build something amazing.</p> -->
+    </header>
       <div class="content-skill">
         <div class="grid" data-aos="fade-up">
           <div class="skill-card" v-for="skill in skills" :key="skill.name">

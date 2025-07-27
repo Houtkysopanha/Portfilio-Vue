@@ -11,7 +11,8 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import AnimateOnScroll from 'primevue/animateonscroll';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
+import ToastService from 'primevue/toastservice';
+import Toast from 'primevue/toast';
 const app = createApp(App);
 
 // Use PrimeVue and Particles
@@ -20,7 +21,8 @@ app.use(PrimeVue, {
         preset: Aura
     }
 });
-
+app.use(ToastService);
+app.component('AppToast', Toast);
 app.use(Particles, {
     init: async engine => {
       await loadSlim(engine); // use slim version

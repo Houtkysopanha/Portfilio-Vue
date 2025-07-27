@@ -1,58 +1,68 @@
 <template>
-  <div class="main-contact" style="margin-top: 65px;">
+  <div class="min-h-screen flex flex-col items-center justify-center py-12 px-4 bg-gradient-to-br from-gray-900 to-gray-800 text-gray-100 font-inter">
+    <AppToast />
     <header class="mb-10 text-center">
-      <h1 style=" font-size: 2.5rem; 
-  font-weight: 700;
-  
-  color: #38bdf8;" data-aos="fade-up"> &lt; / <span style="border-bottom: 5px solid white;">Get</span>In Touch &gt; </h1>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-indigo-400 tracking-tight leading-tight mb-4 animate-fade-in-down">
+        &lt; / <span class="border-b-4 border-indigo-300 pb-1">Get</span>In Touch &gt;
+      </h1>
+      <p class="text-gray-400 text-lg sm:text-xl animate-fade-in-up">Let's connect and build something amazing.</p>
     </header>
-    <div class="box" data-aos="zoom-out-down">
-      <div class="row g-0">
-        <!-- Left Side (Image) -->
-        <div class="col-md-6 col-sm-12 bg-box1">
-          <img src="../assets/contact.png" alt="Contact" />
+
+    <div class="w-full max-w-6xl mx-auto bg-gray-800 bg-opacity-80 rounded-2xl shadow-2xl overflow-hidden backdrop-filter backdrop-blur-lg border border-gray-700 animate-zoom-in">
+      <div class="flex flex-col lg:flex-row">
+        <div class="lg:w-2/5 p-8 bg-gradient-to-br from-gray-700 to-gray-600 flex items-center justify-center">
+          <img src="../assets/contact.png" alt="Contact" class="w-full max-w-sm rounded-2xl shadow-xl transform transition-transform duration-300 hover:scale-105" />
         </div>
-        <!-- Right Side (Form) -->
-        <div class="col-md-6 col-sm-12 bg-box2">
-          <div class="form-header mb-5">
-            <h2 class="text-2xl text-center text-white font-semibold">We'd love to hear from you!</h2>
-            <p class="text-center text-gray-300">Fill out the form below and we’ll get back to you shortly.</p>
+        <div class="lg:w-3/5 p-8 lg:p-12 flex flex-col justify-center">
+          <div class="mb-8 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-indigo-300 mb-3">We'd love to hear from you!</h2>
+            <p class="text-gray-300 text-base sm:text-lg leading-relaxed">Fill out the form below and we'll get back to you shortly.</p>
           </div>
-          <form @submit.prevent="handleSubmit">
-            <div class="form-group mb-4">
-              <input 
-                class="form-control" 
-                type="text" 
-                v-model="formData.name" 
-                placeholder="Full Name" 
-                required />
+          <form @submit.prevent="handleSubmit" class="space-y-6">
+            <div>
+              <input
+                class="w-full px-5 py-3 rounded-xl bg-gray-700 border-2 border-gray-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500 focus:ring-opacity-30 transition duration-300"
+                type="text"
+                v-model="formData.name"
+                placeholder="Full Name"
+                required
+              />
             </div>
-            <div class="form-group mb-4">
-              <input 
-                class="form-control" 
-                type="email" 
-                v-model="formData.email" 
-                placeholder="Your Email" 
-                required />
+            <div>
+              <input
+                class="w-full px-5 py-3 rounded-xl bg-gray-700 border-2 border-gray-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500 focus:ring-opacity-30 transition duration-300"
+                type="email"
+                v-model="formData.email"
+                placeholder="Your Email"
+                required
+              />
             </div>
-            <div class="form-group mb-4">
-              <input 
-                class="form-control" 
-                type="tel" 
-                v-model="formData.phone" 
-                placeholder="Phone Number" 
-                required />
+            <div>
+              <input
+                class="w-full px-5 py-3 rounded-xl bg-gray-700 border-2 border-gray-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500 focus:ring-opacity-30 transition duration-300"
+                type="tel"
+                v-model="formData.phone"
+                placeholder="Phone Number"
+                required
+              />
             </div>
-            <div class="form-group mb-4">
-              <textarea 
-                class="form-control" 
-                v-model="formData.message" 
-                placeholder="Your Message" 
-                rows="5" 
-                required></textarea>
+            <div>
+              <textarea
+                class="w-full px-5 py-3 rounded-xl bg-gray-700 border-2 border-gray-600 text-gray-100 placeholder-gray-400 focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500 focus:ring-opacity-30 transition duration-300 resize-y min-h-[120px]"
+                v-model="formData.message"
+                placeholder="Your Message"
+                rows="5"
+                required
+              ></textarea>
             </div>
-            <div class="text-center">
-              <button type="submit" class="submit-btn">Submit</button>
+            <div class="text-center pt-4">
+              <button
+                type="submit"
+                class="px-8 py-3 rounded-xl text-lg font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-purple-400 focus:ring-opacity-50"
+                :disabled="sending"
+              >
+                {{ sending ? 'Sending...' : 'Send Message' }}
+              </button>
             </div>
           </form>
         </div>
@@ -61,10 +71,15 @@
   </div>
 </template>
 
-
 <script>
+import emailjs from 'emailjs-com';
+import { useToast } from 'primevue/usetoast';
+// Make sure you have AppToast component imported if it's custom
+// import AppToast from '@/components/AppToast.vue'; // Example path
+
 export default {
   name: "ContactPage",
+  // components: { AppToast }, // Uncomment if AppToast is a custom component
   data() {
     return {
       formData: {
@@ -73,13 +88,51 @@ export default {
         phone: "",
         message: "",
       },
+      sending: false,
+      toast: null,
     };
   },
+  mounted() {
+    this.toast = useToast();
+    // Initialize AOS if you are using it
+    // if (window.AOS) {
+    //   window.AOS.init();
+    // }
+  },
   methods: {
-    handleSubmit() {
-      console.log("Form Submitted: ", this.formData);
-      alert("Your message has been sent successfully!");
-      this.resetForm();
+    async handleSubmit() {
+      this.sending = true;
+      try {
+        const now = new Date();
+        const timeString = now.toLocaleString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: true
+        });
+
+        await emailjs.send(
+          'service_cqvewto', // Replace with your EmailJS Service ID
+          'template_az9zl7k', // Replace with your EmailJS Template ID
+          {
+            name: this.formData.name,
+            time: timeString,
+            email: this.formData.email,
+            phoneNumber: this.formData.phone,
+            message: this.formData.message,
+          },
+          'klvWgZVaF-d2hJHUr' // Replace with your EmailJS Public Key
+        );
+        this.toast.add({ severity: 'success', summary: 'Success', detail: 'Your message has been sent!', life: 4000 });
+        this.resetForm();
+      } catch (error) {
+        this.toast.add({ severity: 'error', summary: 'Error', detail: 'Failed to send message. Please try again.', life: 4000 });
+        console.error(error);
+      }
+      this.sending = false;
     },
     resetForm() {
       this.formData = {
@@ -94,87 +147,62 @@ export default {
 </script>
 
 <style scoped>
-/* Main Container */
-.main-contact {
-  background: linear-gradient(135deg, #1e293b, #334155);
-  color: #fff;
-  padding: 2rem 1rem;
+/*
+  You would typically put these in a global CSS file or your main Tailwind config
+  if you want to use custom animations or fonts.
+  For simplicity, I'm keeping them here, but Tailwind's philosophy is
+  to use utility classes directly in the template.
+*/
+.font-inter {
+  font-family: 'Inter', sans-serif;
 }
 
-/* Box Container */
-.box {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-/* Left Side (Image) */
-.bg-box1 img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Right Side (Form) */
-.bg-box2 {
-  background: #1f2937;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.form-header {
-  margin-bottom: 1.5rem;
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 0.8rem 1rem;
-  border-radius: 8px;
-  border: 1px solid #4b5563;
-  background: #374151;
-  color: #fff;
-  outline: none;
-  transition: all 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  border-color: #60a5fa;
-  background: #1f2937;
-}
-
-.submit-btn {
-  background: #2563eb;
-  color: #fff;
-  padding: 0.8rem 2rem;
-  font-size: 1rem;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.submit-btn:hover {
-  background: #1d4ed8;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .bg-box2 {
-    padding: 1.5rem;
+/* Custom animations if you still want them and are not using AOS */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
   }
-
-  .form-group {
-    margin-bottom: 1rem;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in-down {
+  animation: fadeInDown 0.8s ease-out forwards;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.2s; /* Delay for sequence */
+}
+
+.animate-zoom-in {
+  animation: zoomIn 0.8s ease-out forwards;
+  animation-delay: 0.4s; /* Delay for sequence */
+}
+
 </style>
-

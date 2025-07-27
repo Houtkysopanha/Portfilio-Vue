@@ -1,12 +1,12 @@
 <template>
 
   <div class="main-experience" style="margin-top: 65px; ">
-      <div class="title text-center">
-        <h1 style=" font-size: 2.5rem; 
-  font-weight: 700;
-  
-  color: #38bdf8;" data-aos="fade-up"> &lt; / <span style="border-bottom: 5px solid white;">Edu</span>cation &gt; </h1>
-      </div>
+        <header class="mb-10 text-center">
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-indigo-400 tracking-tight leading-tight mb-4 animate-fade-in-down">
+        &lt; / <span class="border-b-4 border-indigo-300 pb-1">My</span> Education &gt;
+      </h1>
+      <!-- <p class="text-gray-400 text-lg sm:text-xl animate-fade-in-up">Let's connect and build something amazing.</p> -->
+    </header>
       <div class="timelinw-exper">
           <section>
   <!-- Intro Section -->
@@ -39,7 +39,7 @@ export default{
   return {
     timelineItems: [
     { year: "2024-2028", heading: "ROYAL UNIVERSITY OF PHNOM PENH", description: "Batcerlor of Information Technology | Majoring | Computer Scient" },
-    { year: "Feb 2024-Present", heading: "AUSTRALIAN CENTER FOR EDUCATION", description: "General English Program | GEP7A" },
+    { year: "Feb 2024-Present", heading: "AUSTRALIAN CENTER FOR EDUCATION", description: "General English Program | GEP8" },
     { year: "Nov,02-03,2024", heading: "INSTINCT INSTITUTE", description: "Workshop | DevSecOps"},
     { year: "Apr,06 - Jun,22,2024", heading: "INSTINCT INSTITUTE", description: "Frontend Developers | Short Course" },
     { year: "2020-2023", heading: "TAING KRASANG HIGHT SCHOOL", description: "Graduated from Grade 12 National Education Program" },
@@ -113,9 +113,6 @@ margin: 0 auto;
 text-align: center;
 }
 
-h1 {
-font-size: 2.5rem;
-}
 
 /* TIMELINE */
 .timeline {

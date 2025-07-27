@@ -1,160 +1,143 @@
 <template>
-  <div class="btn_wrap">
-    <span>Contact Me</span>
-    <div class="container">
-      <a href="https://www.facebook.com/houtkyso.panha.9/" target="blank">
-        <i class="fa-brands fa-facebook" style="color: #18629a"></i>
-      </a>
+  <div class="btn-wrap group relative flex justify-center items-center overflow-hidden cursor-pointer w-60 sm:w-64 h-14 rounded-full shadow-lg transition-all duration-300 ease-in-out hover:scale-105">
+    <span class="absolute z-10 w-full h-full rounded-full flex justify-center items-center text-lg sm:text-xl font-bold tracking-wide text-white bg-gradient-to-r from-blue-600 to-purple-700 transition-all duration-500 ease-in-out group-hover:opacity-0 group-hover:scale-75 group-hover:-translate-x-full">
+      Contact Me
+    </span>
 
-      <a href="https://www.instagram.com/houtkysopanha/" target="blank">
-        <i class="fa-brands fa-instagram" style="color: #c31d1d"></i>
+    <div class="social-icons-container absolute flex justify-around items-center w-full h-full rounded-full bg-gradient-to-r from-gray-800 to-gray-900 transition-all duration-500 ease-in-out">
+      <a href="https://www.facebook.com/houtkyso.panha.9/" target="_blank" rel="noopener noreferrer" class="social-icon facebook">
+        <i class="fa-brands fa-facebook"></i>
       </a>
-
-      <a href="https://t.me/houtKysopanha" target="blank">
-        <i class="fa-brands fa-telegram" style="color: #74c0fc"></i>
+      <a href="https://www.instagram.com/houtkysopanha/" target="_blank" rel="noopener noreferrer" class="social-icon instagram">
+        <i class="fa-brands fa-instagram"></i>
       </a>
-      <a
-        href="https://www.linkedin.com/in/hout-ky-sopanha-8597852ba/"
-        target="blank"
-      >
-        <i class="fa-brands fa-linkedin" style="color: #327bb3"></i>
+      <a href="https://t.me/houtKysopanha" target="_blank" rel="noopener noreferrer" class="social-icon telegram">
+        <i class="fa-brands fa-telegram"></i>
       </a>
-      <a href="tel: +855 99 654 752" target="blank">
-        <i class="fa-solid fa-phone" style="color: green"></i>
+      <a href="https://www.linkedin.com/in/hout-ky-sopanha-8597852ba/" target="_blank" rel="noopener noreferrer" class="social-icon linkedin">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+      <a href="tel:+85599654752" target="_blank" rel="noopener noreferrer" class="social-icon phone">
+        <i class="fa-solid fa-phone"></i>
       </a>
     </div>
   </div>
 </template>
+
 <script>
 export default {
   name: "ContactFoot",
 };
 </script>
+
 <style scoped>
-body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #fefefe;
+/* Main button wrapper */
+.btn-wrap {
+  background-color: #3b82f6; /* Fallback color for initial state */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(59, 130, 246, 0.3); /* Subtle border */
+  /* Tailwind handles: transition-all duration-300 ease-in-out hover:scale-105 */
 }
 
-i {
-  opacity: 0;
-  font-size: 28px;
-  color: #1f1e1e;
-  will-change: transform;
-  -webkit-transform: scale(0.1);
-  transform: scale(0.1);
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-.btn_wrap {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  overflow: hidden;
-  cursor: pointer;
-  width: 240px;
-  height: 50px;
-  background-color: whitesmoke;
-  /* border: 0.2px solid lightblue; */
-  border-radius: 80px;
-  padding: 0 18px;
-  will-change: transform;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
-
-.btn_wrap:hover {
-  /* transition-delay: .4s; */
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-}
-
+/* "Contact Me" Text Styling */
 span {
-  position: absolute;
-  z-index: 99;
-  width: 240px;
-  height: 50px;
-  border-radius: 80px;
-  font-size: 20px;
-  text-align: center;
-  line-height: 49px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  color: whitesmoke;
-  background-color: lightseagreen;
-  padding: 0 18px;
-  -webkit-transition: all 1.2s ease;
-  transition: all 1.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for the text pill */
 }
 
-.container {
-  display: -webkit-box;
-  display: -ms-flexbox;
+/* Social Icons Container */
+.social-icons-container {
+  padding: 0 1rem; 
+  /*
+  The key change here:
+  Initially, the text `span` is OVER the icons and is opaque.
+  On hover, the `span` becomes transparent and slides away,
+  revealing this `social-icons-container` which is always opaque here.
+  */
+  opacity: 1; /* Ensure this container is always opaque. It's hidden by the `span` initially. */
+  transform: translateX(0); /* Ensure it's not off-screen initially */
+  transition: opacity 0.5s ease-in-out; /* Smooth transition for its own opacity (if used) */
+}
+
+/* Individual Social Icon Styling */
+.social-icon {
   display: flex;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
+  justify-content: center;
   align-items: center;
-  width: 240px;
-  height: 64px;
-  border-radius: 80px;
+  width: 40px; /* Fixed size for touch target */
+  height: 40px;
+  border-radius: 50%; /* Circular background */
+  background-color: rgba(255, 255, 255, 0.1); /* Subtle background for icons */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  /* Icons start off-scale and hidden, then transition in */
+  transform: scale(0); /* Start completely hidden/zero scale */
+  opacity: 0; /* Start completely transparent */
 }
 
-.container i:nth-of-type(1) {
-  -webkit-transition-delay: 1.1s;
-  transition-delay: 1.1s;
+/* Specific icon colors (directly on the <i> tag) */
+.social-icon.facebook i { color: #18629a; }
+.social-icon.instagram i { color: #c31d1d; }
+.social-icon.telegram i { color: #74c0fc; }
+.social-icon.linkedin i { color: #327bb3; }
+.social-icon.phone i { color: #28a745; }
+
+/* Icon visibility and animation on group hover */
+.btn-wrap:hover .social-icons-container .social-icon {
+  opacity: 1; /* Fade in to full visibility */
+  transform: scale(1); /* Scale up to normal size */
 }
 
-.container i:nth-of-type(2) {
-  -webkit-transition-delay: 0.9s;
-  transition-delay: 0.9s;
+/* Staggered animation for icons */
+/* The base transition is 0.3s, so delays stack on top of that */
+.btn-wrap:hover .social-icons-container .social-icon:nth-child(1) { transition-delay: 0.1s; }
+.btn-wrap:hover .social-icons-container .social-icon:nth-child(2) { transition-delay: 0.15s; }
+.btn-wrap:hover .social-icons-container .social-icon:nth-child(3) { transition-delay: 0.2s; }
+.btn-wrap:hover .social-icons-container .social-icon:nth-child(4) { transition-delay: 0.25s; }
+.btn-wrap:hover .social-icons-container .social-icon:nth-child(5) { transition-delay: 0.3s; }
+
+.social-icon i {
+  font-size: 1.5rem; /* Icon size */
+  transition: transform 0.2s ease; /* Transition for individual icon hover */
+  
 }
 
-.container i:nth-of-type(3) {
-  -webkit-transition-delay: 0.7s;
-  transition-delay: 0.7s;
+.social-icon:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Slightly brighter background on icon hover */
+  transform: scale(1.1); /* Pop effect on individual icon hover */
 }
 
-.container i:nth-of-type(4) {
-  -webkit-transition-delay: 0.4s;
-  transition-delay: 0.4s;
+/* --- Responsive adjustments --- */
+@media (max-width: 640px) {
+  .btn-wrap {
+    width: 200px;
+    height: 50px;
+  }
+  span {
+    font-size: 1rem;
+  }
+  .social-icon {
+    width: 35px;
+    height: 35px;
+  }
+  .social-icon i {
+    font-size: 1.2rem;
+  }
 }
 
-.btn_wrap:hover span {
-  -webkit-transition-delay: 0.25s;
-  transition-delay: 0.25s;
-  -webkit-transform: translateX(-280px);
-  transform: translateX(-280px);
-}
-
-.btn_wrap:hover i {
-  opacity: 1;
-  -webkit-transform: scale(1);
-  transform: scale(1);
-}
-
-.dr {
-  position: absolute;
-  bottom: 16px;
-  right: 16px;
-  width: 100px;
+@media (max-width: 480px) {
+  .btn-wrap {
+    width: 180px;
+    height: 45px;
+  }
+  span {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+  .social-icon {
+    width: 30px;
+    height: 30px;
+  }
+  .social-icon i {
+    font-size: 1rem;
+  }
 }
 </style>
