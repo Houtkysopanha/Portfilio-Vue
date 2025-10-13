@@ -34,6 +34,13 @@ export default {
     return {
       cards: [
          {
+          imgSrc: require('/src/assets/etickets.png'),
+          alt: "etickets.asia - Business portal project.",
+          title: "etickets.asia - Business portal project.",
+          description: "System for event ticket management system.",
+          projectLink: "https://business.etickets.asia"
+        },
+         {
           imgSrc: require('/src/assets/ecom-clothing.png'),
           alt: "Ecommerce Web Clothing-Women",
           title: "Ecommerce Web Clothing-Women",

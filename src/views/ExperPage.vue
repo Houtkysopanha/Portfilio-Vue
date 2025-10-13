@@ -40,12 +40,19 @@ export default {
   data() {
     return {
       timelineItems: [
+         { 
+          school: "etickets.asia | Internship",
+          dec: "Prestige Consuting", 
+          dec1: "Work as a position Frontend Developer, develop user friendly with RestFull API. Collaborate with Professional UI/UX and Backend Developer." ,
+          photo: require("../assets/etickets1.png"), 
+          mark: "Present",
+        }, 
         { 
           school: "Ministy of Interior | Internship",
           dec: "General Department of Digital Technology and Media", 
           dec1: "Work as a position Frontend Developer at Department of Software Development and Digital Innovation" ,
           photo: require("../assets/Img MOI.png"), 
-          mark: "Present",
+          mark: "Finished",
         }, 
         { 
           school: "EdTech Summit Cambodia | Volunteer",

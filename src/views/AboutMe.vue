@@ -75,7 +75,7 @@
               class="action-button bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"
               as="a"
               label="Detail Me (CV)"
-              href="/My_CV.pdf"
+              href="/Houtkysopanha_CV.pdf"
               target="_blank"
               rel="noopener"
             >
