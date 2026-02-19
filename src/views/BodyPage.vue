@@ -31,8 +31,25 @@
             </div>
           </div>
           <div class="col-md-6">
-            <div class="con2  image-container" data-aos="fade-left">
-              <img src="../assets/myprofile1.png" alt="Avatar" class="avatar-img" />
+            <div class="con2 image-container" data-aos="fade-left">
+              <div class="profile-container">
+                <div class="image-wrapper">
+                  <img :src="require('@/assets/my-img.png')" alt="Avatar" class="avatar-img" />
+                </div>
+                <!-- Tech Icons -->
+                <div class="tech-icon icon-html">
+                  <i class="fab fa-html5" style="color: #e34c26;"></i>
+                </div>
+                <div class="tech-icon icon-css">
+                  <i class="fab fa-css3-alt" style="color: #264de4;"></i>
+                </div>
+                <div class="tech-icon icon-js">
+                  <i class="fab fa-js" style="color: #f0db4f;"></i>
+                </div>
+                <div class="tech-icon icon-vue">
+                  <i class="fab fa-vuejs" style="color: #42b883;"></i>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -208,10 +225,124 @@ methods: {
   }
 }
 
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.profile-container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid white; /* Optional: adds a nice frame */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.tech-icon {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  z-index: 10;
+  animation: float 3s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+.tech-icon:hover {
+  transform: scale(1.1) rotate(10deg);
+  cursor: pointer;
+}
+
+.icon-html {
+  top: 10%;
+  left: -20px;
+  animation-delay: 0s;
+}
+
+.icon-css {
+  bottom: 10%;
+  left: -10px;
+  animation-delay: 1s;
+}
+
+.icon-js {
+  top: 5%;
+  right: -10px;
+  animation-delay: 2s;
+}
+
+.icon-vue {
+  bottom: 15%;
+  right: -25px;
+  animation-delay: 0.5s;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.image-wrapper:hover {
+  transform: scale(1.02); /* Subtle hover effect */
+}
+
 .avatar-img {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image covers the circle without distortion */
   display: block;
+}
+
+/* Responsive adjustments for the image */
+@media (max-width: 992px) {
+  .profile-container {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .tech-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 576px) {
+  .profile-container {
+    width: 250px;
+    height: 250px;
+    margin-top: 2rem;
+  }
+  
+  .tech-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+  
+  /* Adjust icon positions for smaller screens to keep them close */
+  .icon-html { left: -10px; }
+  .icon-css { left: -5px; }
+  .icon-js { right: -5px; }
+  .icon-vue { right: -10px; }
 }
 
 @media (max-width: 992px) {

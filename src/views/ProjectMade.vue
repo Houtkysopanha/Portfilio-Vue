@@ -40,6 +40,27 @@ export default {
           description: "System for event ticket management system.",
           projectLink: "https://business.etickets.asia"
         },
+          {
+          imgSrc: require('/src/assets/pos-user.png'),
+          alt: "POS User Interface",
+          title: "POS User Interface",
+          description: "A user-friendly point of sale interface for efficient transactions.",
+          projectLink: "https://pos-user-five.vercel.app/login"
+        },
+         {
+          imgSrc: require('/src/assets/pos-business.png'),
+          alt: "POS Business Interface",
+          title: "POS Business Interface",
+          description: "A business-oriented point of sale interface for managing transactions and inventory.",
+          projectLink: "https://pos-business.vercel.app/login"
+        },
+         {
+          imgSrc: require('/src/assets/pos-superadmin.png'),
+          alt: "POS Superadmin Interface",
+          title: "POS Superadmin Interface",
+          description: "A superadmin-oriented point of sale interface for managing all aspects of the system.",
+          projectLink: "https://pos-superadmin-nu.vercel.app/login"
+        },
          {
           imgSrc: require('/src/assets/ecom-clothing.png'),
           alt: "Ecommerce Web Clothing-Women",

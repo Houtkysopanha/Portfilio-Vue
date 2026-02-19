@@ -41,10 +41,17 @@ export default {
     return {
       timelineItems: [
          { 
-          school: "etickets.asia | Internship",
+          school: "etickets.asia ",
           dec: "Prestige Consuting", 
           dec1: "Work as a position Frontend Developer, develop user friendly with RestFull API. Collaborate with Professional UI/UX and Backend Developer." ,
           photo: require("../assets/etickets1.png"), 
+          mark: "Present",
+        }, 
+         { 
+          school: " InnGenius | Freelancer",
+          dec: "POS System for Restaurant", 
+          dec1: "Work as a position Frontend Developer to develop user friendly with RestFull API. Collaborate with Professional UI/UX and Backend Developer." ,
+          photo: require("../assets/logo-freelancer.png"), 
           mark: "Present",
         }, 
         { 

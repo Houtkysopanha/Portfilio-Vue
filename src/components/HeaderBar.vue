@@ -18,7 +18,7 @@
       <div class="logo p-1 text-center d-flex">
       <div class="name-logo text-end">
         <a class="navbar-brand navbar-logo" href="#">
-          <span>P</span>orfolio | <span>P</span>anah |
+          <span>P</span>orfolio | <span>P</span>anha |
         </a>
       </div>
       <div class="img-logo">
